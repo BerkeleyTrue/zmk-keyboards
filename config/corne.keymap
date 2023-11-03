@@ -29,6 +29,7 @@
 #define NEXT  K_NEXT
 #define PLAY  K_PP
 #define STOP  K_STOP2
+#define OUTTOG &kp OUT_TOG // toggle keyboard output bluetooth/usb
 
 // Home row mods
 #define HRML(k1, k2, k3, k4) &ht LSHFT k1 &ht LCTRL k2 &ht LALT k3 &ht LGUI k4
@@ -146,7 +147,7 @@
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │PREV_TRCK│ VOl_DOWN│  VOL_UP │NEXT_TRCK│
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp PREV  &kp VOLD  &kp VOLU  &kp NEXT
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │OutToggle│BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │ // shift to clear profile
-    &none     &none     &none     &none     &none         OUT_TOG   &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
+    &none     &none     &none     &none     &none         OUTTOG    &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
                         &trans    &none     &none         &kp STOP  &kp PLAY  &kp MUTE
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
