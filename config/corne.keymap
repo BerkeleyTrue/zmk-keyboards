@@ -100,7 +100,7 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │    {    │    &    │    *    │    (    │    }    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp LBRC  &kp AMP   &kp STAR  &kp LPAR  &kp RBRC      &none     &none     &none     &none     &none
+    &kp LBRC  &kp AMPS  &kp STAR  &kp LPAR  &kp RBRC      &none     &none     &none     &none     &none
 // │    ;    │    $    │    %    │    ^    │    +    │   │   NOP   │  SHIFT  │  CTRL   │   ALT   │  SUPER  │
     &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
 // │    `    │    !    │    @    │    #    │    |    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
