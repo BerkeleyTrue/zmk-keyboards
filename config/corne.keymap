@@ -85,13 +85,13 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │    [    │    7    │    8    │    9    │    ]    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp LBKT  &kp n7    &kp n8    &kp n9    &kp RBKT      &none     &none     &none     &none     &none
+    &kp LBKT  &kp N7    &kp N8    &kp N9    &kp RBKT      &none     &none     &none     &none     &none
 // │    ;    │    4    │    5    │    6    │    =    │   │   NOP   │  SHIFT  │  CTRL   │   ALT   │  SUPER  │
-    &kp SEMI  &kp n4    &kp n5    &kp n6    &kp EQUAL     &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
+    &kp SEMI  &kp N4    &kp N5    &kp N6    &kp EQUAL     &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
 // │    `    │    1    │    2    │    3    │    \    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp TILDE &kp n1    &kp n2    &kp n3    &kp FSLH      &none     &none     &none     &none     &none
+    &kp TILDE &kp N1    &kp N2    &kp N3    &kp FSLH      &none     &none     &none     &none     &none
 //                     │    .    │    0    │    -    │   │   NOP   │   NOP   │   NOP   │
-                        &kp DOT   &kp n0    &kp MINUS     &none     &trans    &none
+                        &kp DOT   &kp N0    &kp MINUS     &none     &trans    &none
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
