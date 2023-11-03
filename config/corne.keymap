@@ -32,8 +32,8 @@
 #define OUTTOG &out OUT_TOG // toggle keyboard output bluetooth/usb
 
 // Home row mods
-#define HRML(k1, k2, k3, k4) &ht LSHFT k1 &ht LCTRL k2 &ht LALT k3 &ht LGUI k4
-#define HRMR(k1, k2, k3, k4) &ht RSHFT k1 &ht RCTRL k2 &ht RALT k3 &ht RGUI k4
+#define HRML(k1, k2, k3, k4) &mt LSHFT k1 &mt LCTRL k2 &mt LALT k3 &mt LGUI k4
+#define HRMR(k1, k2, k3, k4) &mt RSHFT k1 &mt RCTRL k2 &mt RALT k3 &mt RGUI k4
 
 / {
   behaviors {
