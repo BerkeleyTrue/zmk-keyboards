@@ -27,7 +27,7 @@
 #define BREDO  K_REDO
 #define BPREV  K_PREV
 #define BNEXT  K_NEXT
-#define BPP    K_PP
+#define BPP    &kp K_PP
 #define BMUTE  K_MUTE
 #define BSTOP  K_STOP2
 #define BVOLD  K_VOL_DN
@@ -118,7 +118,7 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    &none     &none     &none     &none     &none         &kp BREDO  &kp BPSTE  &kp BCPY  &kp BCUT   &kp BUNDO
+    &none     &none     &none     &none     &none         &kp BREDO &kp BPSTE &kp BCPY  &kp BCUT  &kp BUNDO
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  INSERT │  HOME   │  PGDN   │   PGUP  │   END   │
@@ -132,7 +132,7 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    &none     &none     &none     &none     &none         &kp BREDO  &kp BPSTE  &kp BCPY  &kp BCUT   &kp BUNDO
+    &none     &none     &none     &none     &none         &kp BREDO &kp BPSTE &kp BCPY  &kp BCUT  &kp BUNDO
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │  HOME   │  PGDN   │   PGUP  │   END   │
@@ -152,7 +152,7 @@
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │OutToggle│BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │ // shift to clear profile
     &none     &none     &none     &none     &none         &none     &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
-                        &trans    &none     &none         &kp BSTOP &kp BPP   &kp BMUTE
+                        &trans    &none     &none         &kp BSTOP BPP       &kp BMUTE
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
