@@ -1,58 +1,173 @@
-/*
- * Copyright (c) 2020 The ZMK Contributors
- *
- * SPDX-License-Identifier: MIT
- */
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+// layers
+#define DEF     0
+#define NUM     1
+#define SYM     2
+#define NAV     3
+#define MOUSE   4
+#define MEDIA   5
+#define FUN     6
+
+// Layer switching
+#define BSCNUM  &lt NUM   BSPC
+#define ENTSYM  &lt SYM   RET
+#define SPCNAV  &lt NAV   SPACE
+#define TABMSE  &lt MOUSE TAB
+#define ESCMED  &lt MED   ESC
+#define DELFUN  &lt FUN   DEL
+
+// shorter codes
+#define PSTE  K_PASTE
+#define COPY  K_COPY
+#define CUT   K_CUT
+#define UNDO  K_UNDO
+#define REDO  K_REDO
+#define PREV  K_PREV
+#define NEXT  K_NEXT
+#define PLAY  K_PP
+#define STOP  K_STOP2
+
+// Home row mods
+#define HRML(k1, k2, k3, k4) &ht LSHFT k1 &ht LCTRL k2 &ht LALT k3 &ht LGUI k4
+#define HRMR(k1, k2, k3, k4) &ht RSHFT k1 &ht RCTRL k2 &ht RALT k3 &ht RGUI k4
+
 / {
-        keymap {
-                compatible = "zmk,keymap";
+  behaviors {
+    bts0_cl: bt_sel0_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL0_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    bts1_cl: bt_sel1_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL1_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 1>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    bts2_cl: bt_sel2_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL2_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 2>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    bts3_cl: bt_sel3_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL3_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 3>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+  };
+  keymap {
+    compatible = "zmk,keymap";
+    default_layer { // layer 0 (default)
+      bindings = <
+// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
+// │    Q    │    W    │    E    │    R    │    T    │   │    Y    │    U    │    I    │    O    │    P    │
+    &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P
+// │    A    │    S    │    D    │    F    │    G    │   │    H    │    J    │    K    │    L    │    ;    │
+    HRMR(A        S         D         F)    &kp G         &kp H     HRMR(J        K         L       SEMI)
+// │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │    ,    │    .    │    /    │
+    &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH
+//                     │ESC/Media│SPC/Navi │Tab/Mouse│   │ENT/Symbs│BKSP/Numb│Del/Funct│
+                        ESCMED    SPCNAV    TABMSE        ENTSYM    BSCNUM    DELFUN
+//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
+      >;
+    };
+    number_layer { // layer 1 (numbers)
+      bindings = <
+// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
+// │    [    │    7    │    8    │    9    │    ]    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
+    &kp LBKT  &kp n7    &kp n8    &kp n9    &kp RBKT      &none     &none     &none     &none     &none
+// │    ;    │    4    │    5    │    6    │    =    │   │   NOP   │  SHIFT  │  CTRL   │   ALT   │  SUPER  │
+    &kp SEMI  &kp n4    &kp n5    &kp n6    &kp EQUAL     &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
+// │    `    │    1    │    2    │    3    │    \    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
+    &kp TILDE &kp n1    &kp n2    &kp n3    &kp FSLH      &none     &none     &none     &none     &none
+//                     │    .    │    0    │    -    │   │   NOP   │   NOP   │   NOP   │
+                        &kp DOT   &kp n0    &kp MINUS     &none     &trans    &none
+//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
+      >;
+    };
 
-                default_layer {
-// --------------------------------------   ------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                  &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
-                lower_layer {
-// --------------------------------------   ------------------------------------------------
-// |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4   &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans   &trans   &trans &trans    &trans &trans
-                                    &kp LGUI     &trans       &kp SPACE      &kp RET  &trans   &kp RALT
-                        >;
-                };
+    symbol_layer { // layer 2 (symbols)
+      bindings = <
+// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
+// │    {    │    &    │    *    │    (    │    }    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
+    &kp LBRC  &kp AMP   &kp STAR  &kp LPAR  &kp RBRC      &none     &none     &none     &none     &none
+// │    ;    │    $    │    %    │    ^    │    +    │   │   NOP   │  SHIFT  │  CTRL   │   ALT   │  SUPER  │
+    &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
+// │    `    │    !    │    @    │    #    │    |    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
+    &kp TILDE &kp n1    &kp AT    &kp HASH  &kp PIPE      &none     &none     &none     &none     &none
+//                     │    (    │    )    │    _    │   │   NOP   │   NOP   │   NOP   │
+                        &kp LPAR  &kp RPAR  &kp UNDER     &none     &trans    &none
+//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
+      >;
+    };
+    navigation_layer { // layer 3 (navigation)
+      bindings = <
+// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
+    &none     &none     &none     &none     &none         &kp REDO  &kp PSTE  &kp COPY  &kp CUT   &kp UNDO
+// │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
+    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  INSERT │  HOME   │  PGDN   │   PGUP  │   END   │
+    &none     &none     &none     &none     &none         &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
+//                     │   NOP   │   NOP   │   NOP   │   │   RET   │ BACKSPAC│  DELETE │
+                        &none     &trans    &none         &kp RET   &kp BSPC  &kp DEL
+//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
+      >;
+    };
+    mouse_layer { // layer 4 (mouse) | zmk currently does not support mouse keys, so this is a duplicate of navigation layer
+      bindings = <
+// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
+    &none     &none     &none     &none     &none         &kp REDO  &kp PSTE  &kp COPY  &kp CUT   &kp UNDO
+// │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
+    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │  HOME   │  PGDN   │   PGUP  │   END   │
+    &none     &none     &none     &none     &none         &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
+//                     │   NOP   │   NOP   │   NOP   │   │   RET   │ BACKSPAC│  DELETE │
+                        &none     &trans    &none         &kp RET   &kp BSPC  &kp DEL
+//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
+      >;
+    };
+    media_layer { // layer 5 (media)
+      bindings = <
+// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
+    &none     &none     &none     &none     &none         &none     &none     &none     &none     &none
+// │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │PREV_TRCK│ VOl_DOWN│  VOL_UP │NEXT_TRCK│
+    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp PREV  &kp VOLD  &kp VOLU  &kp NEXT
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │OutToggle│BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │ // shift to clear profile
+    &none     &none     &none     &none     &none         OUT_TOG   &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
+//                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
+                        &trans    &none     &none         &kp STOP  &kp PLAY  &kp MUTE
+//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
+      >;
+    };
+    function_layer { // layer 6 (function)
+      bindings = <
+// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
+// │   F12   │   F7    │   F8    │   F9    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
+    &kp F12   &kp F7    &kp F8    &kp F9    &kp F0        &none     &none     &none     &none     &none
+// │   F11   │   F4    │   F5    │   F6    │   NOP   │   │   NOP   │   SHIFT │   CTRL  │   ALT   │  SUPER  │
+    &kp F11   &kp F4    &kp F5    &kp F6    &none         &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
+// │   F10   │   F1    │   F2    │   F3    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
+    &kp F10   &kp F1    &kp F2    &kp F3    &none         &none     &none     &none     &none     &none
+//                     │   APP   │  SPACE  │   TAB   │   │   NOP   │   NOP   │   NOP   │
+                        &kp APP   &kp SPACE &kp TAB       &none     &none     &trans
+//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
+      >;
+    };
 
-                raise_layer {
-// --------------------------------------   ------------------------------------------------
-// |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-// | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-// | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp  TAB  &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT   &kp CARET &kp AMPS  &kp KP_MULTIPLY &kp LPAR &kp RPAR &kp BSPC
-   &kp LCTRL &trans   &trans &trans   &trans   &trans      &kp MINUS &kp EQUAL &kp LBKT        &kp RBKT &kp BSLH &kp GRAVE
-   &kp LSHFT &trans   &trans &trans   &trans   &trans      &kp UNDER &kp PLUS  &kp LBRC        &kp RBRC &kp PIPE &kp TILDE
-                             &kp LGUI &trans   &kp SPACE   &kp RET   &trans    &kp RALT
-                        >;
-                };
-        };
+  };
 };
 
 // vim:ft=cpp
