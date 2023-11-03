@@ -73,7 +73,7 @@
 // │    Q    │    W    │    E    │    R    │    T    │   │    Y    │    U    │    I    │    O    │    P    │
     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P
 // │    A    │    S    │    D    │    F    │    G    │   │    H    │    J    │    K    │    L    │    ;    │
-    HRMR(A        S         D         F)    &kp G         &kp H     HRMR(J        K         L       SEMI)
+    HRMR(A,       S,        D,        F)    &kp G         &kp H     HRMR(J,       K,        L,       SEMI)
 // │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │    ,    │    .    │    /    │
     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH
 //                     │ESC/Media│SPC/Navi │Tab/Mouse│   │ENT/Symbs│BKSP/Numb│Del/Funct│
