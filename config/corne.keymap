@@ -157,7 +157,7 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   F12   │   F7    │   F8    │   F9    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp F12   &kp F7    &kp F8    &kp F9    &kp F0        &none     &none     &none     &none     &none
+    &kp F12   &kp F7    &kp F8    &kp F9    &none         &none     &none     &none     &none     &none
 // │   F11   │   F4    │   F5    │   F6    │   NOP   │   │   NOP   │   SHIFT │   CTRL  │   ALT   │  SUPER  │
     &kp F11   &kp F4    &kp F5    &kp F6    &none         &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
 // │   F10   │   F1    │   F2    │   F3    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
