@@ -20,16 +20,16 @@
 #define DELFUN  &lt FUN   DEL
 
 // shorter codes
-#define PSTE  K_PASTE
-#define COPY  K_COPY
-#define CUT   K_CUT
-#define UNDO  K_UNDO
-#define REDO  K_REDO
-#define PREV  K_PREV
-#define NEXT  K_NEXT
-#define PLAY  K_PP
-#define STOP  K_STOP2
-#define OUTTOG &kp OUT_TOG // toggle keyboard output bluetooth/usb
+#define PSTE   K_PASTE
+#define COPY   K_COPY
+#define CUT    K_CUT
+#define UNDO   K_UNDO
+#define REDO   K_REDO
+#define PREV   K_PREV
+#define NEXT   K_NEXT
+#define PLAY   K_PP
+#define STOP   K_STOP2
+#define OUTTOG &out OUT_TOG // toggle keyboard output bluetooth/usb
 
 // Home row mods
 #define HRML(k1, k2, k3, k4) &ht LSHFT k1 &ht LCTRL k2 &ht LALT k3 &ht LGUI k4
