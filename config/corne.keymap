@@ -163,7 +163,7 @@
 // │   F10   │   F1    │   F2    │   F3    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp F10   &kp F1    &kp F2    &kp F3    &none         &none     &none     &none     &none     &none
 //                     │   APP   │  SPACE  │   TAB   │   │   NOP   │   NOP   │   NOP   │
-                        &kp APP   &kp SPACE &kp TAB       &none     &none     &trans
+                        &kp K_APP &kp SPACE &kp TAB       &none     &none     &trans
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
