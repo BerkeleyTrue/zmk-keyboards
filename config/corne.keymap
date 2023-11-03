@@ -104,7 +104,7 @@
 // │    ;    │    $    │    %    │    ^    │    +    │   │   NOP   │  SHIFT  │  CTRL   │   ALT   │  SUPER  │
     &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
 // │    `    │    !    │    @    │    #    │    |    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp TILDE &kp n1    &kp AT    &kp HASH  &kp PIPE      &none     &none     &none     &none     &none
+    &kp TILDE &kp EXCL  &kp AT    &kp HASH  &kp PIPE      &none     &none     &none     &none     &none
 //                     │    (    │    )    │    _    │   │   NOP   │   NOP   │   NOP   │
                         &kp LPAR  &kp RPAR  &kp UNDER     &none     &trans    &none
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
