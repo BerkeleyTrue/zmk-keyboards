@@ -20,15 +20,18 @@
 #define DELFUN  &lt FUN   DEL
 
 // shorter codes
-#define PSTE   K_PASTE
-#define COPY   K_COPY
-#define CUT    K_CUT
-#define UNDO   K_UNDO
-#define REDO   K_REDO
-#define PREV   K_PREV
-#define NEXT   K_NEXT
-#define PLAY   K_PP
-#define STOP   K_STOP2
+#define BPSTE  K_PASTE
+#define BCPY   K_COPY
+#define BCUT   K_CUT
+#define BUNDO  K_UNDO
+#define BREDO  K_REDO
+#define BPREV  K_PREV
+#define BNEXT  K_NEXT
+#define BPP    K_PP
+#define BMUTE  K_MUTE
+#define BSTOP  K_STOP2
+#define BVOLD  K_VOL_DN
+#define BVOLU  K_VOL_UP
 #define OUTTOG &out OUT_TOG // toggle keyboard output bluetooth/usb
 
 // Home row mods
@@ -115,7 +118,7 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    &none     &none     &none     &none     &none         &kp REDO  &kp PSTE  &kp COPY  &kp CUT   &kp UNDO
+    &none     &none     &none     &none     &none         &kp BREDO  &kp BPSTE  &kp BCPY  &kp BCUT   &kp BUNDO
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  INSERT │  HOME   │  PGDN   │   PGUP  │   END   │
@@ -129,7 +132,7 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    &none     &none     &none     &none     &none         &kp REDO  &kp PSTE  &kp COPY  &kp CUT   &kp UNDO
+    &none     &none     &none     &none     &none         &kp BREDO  &kp BPSTE  &kp BCPY  &kp BCUT   &kp BUNDO
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │  HOME   │  PGDN   │   PGUP  │   END   │
@@ -145,11 +148,11 @@
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &none     &none     &none     &none     &none         &none     &none     &none     &none     &none
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │PREV_TRCK│ VOl_DOWN│  VOL_UP │NEXT_TRCK│
-    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp PREV  &kp VOLD  &kp VOLU  &kp NEXT
+    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp BPREV &kp VOLD  &kp VOLU  &kp BNEXT
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │OutToggle│BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │ // shift to clear profile
     &none     &none     &none     &none     &none         &none     &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
-                        &trans    &none     &none         &none     &none     &none
+                        &trans    &none     &none         &kp BSTOP &kp BPP   &kp BMUTE
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
