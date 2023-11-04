@@ -127,7 +127,7 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    &none     &none     &none     &none     &none         &kp BREDO BPSTE     BCPY      BCUT      BUNDO
+    &none     &none     &none     &none     &none         BREDO     BPSTE     BCPY      BCUT      BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
@@ -144,7 +144,7 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    &none     &none     &none     &none     &none         &kp BREDO BPSTE     BCPY      BCUT      BUNDO
+    &none     &none     &none     &none     &none         BREDO     BPSTE     BCPY      BCUT      BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
@@ -164,7 +164,7 @@
     &none     &none     &none     &none     &none         &none     &none     &none     &none     &none
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │PREV_TRCK│ VOl_DOWN│  VOL_UP │NEXT_TRCK│
-    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     BPREV     BVOLD      BVOLU    BNEXT
+    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     BPREV     BVOLD     BVOLU     BNEXT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │OutToggle│BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │ // shift to clear profile
     &none     &none     &none     &none     &none         &none     &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
