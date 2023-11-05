@@ -35,8 +35,8 @@
 #define OUTTOG   &out OUT_TOG // toggle keyboard output bluetooth/usb
 
 // Home row mods
-#define HRML(k1, k2, k3, k4) &mt LSHFT k1 &mt LCTRL k2 &mt LALT  k3 &mt LGUI  k4
-#define HRMR(k1, k2, k3, k4) &mt RGUI  k1 &mt RALT  k2 &mt RCTRL k3 &mt RSHFT k4
+#define HRML(k1, k2, k3, k4) &hm LSHFT k1 &hm LCTRL k2 &hm LALT  k3 &hm LGUI  k4
+#define HRMR(k1, k2, k3, k4) &hm RGUI  k1 &hm RALT  k2 &hm RCTRL k3 &hm RSHFT k4
 
 / {
   chosen {
@@ -46,6 +46,15 @@
 
 / {
   behaviors {
+    hm: homerow_mods_left {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MOD";
+        #binding-cells = <2>;
+        tapping-term-ms = <300>;
+        quick-tap-ms = <250>;
+        flavor = "tap-preferred";
+        bindings = <&kp>, <&kp>;
+    };
     bts0_cl: bt_sel0_clear {
       compatible = "zmk,behavior-mod-morph";
       label = "BT_SEL0_CLEAR";
