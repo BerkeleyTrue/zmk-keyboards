@@ -16,7 +16,7 @@
 #define ENTSYM  &lt SYM   RET
 #define SPCNAV  &lt NAV   SPACE
 #define TABMSE  &lt MOUSE TAB
-#define ESCMED  &lt MEDIA ESC
+#define ESCMED  &mo MEDIA
 #define DELFUN  &lt FUN   DEL
 
 // shorter codes
