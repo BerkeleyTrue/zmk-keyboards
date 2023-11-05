@@ -35,8 +35,8 @@
 #define OUTTOG   &out OUT_TOG // toggle keyboard output bluetooth/usb
 
 // Home row mods
-#define HRML(k1, k2, k3, k4) &mt LSHFT k1 &mt LCTRL k2 &mt LALT k3 &mt LGUI k4
-#define HRMR(k1, k2, k3, k4) &mt RSHFT k1 &mt RCTRL k2 &mt RALT k3 &mt RGUI k4
+#define HRML(k1, k2, k3, k4) &mt LSHFT k1 &mt LCTRL k2 &mt LALT  k3 &mt LGUI  k4
+#define HRMR(k1, k2, k3, k4) &mt RGUI  k1 &mt RALT  k2 &mt RCTRL k3 &mt RSHFT k4
 
 / {
   chosen {
@@ -173,7 +173,7 @@
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     BPREV     BVOLD     BVOLU     BNEXT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │OutToggle│BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │ // shift to clear profile
-    &none     &none     &none     &bt BT_CLR &none        &none      &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
+    &none     &none     &none     &bt BT_CLR     &none         OUTTOG    &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
                         &trans    &none     &none         BSTOP     BPLAYPSE  BMUTE
