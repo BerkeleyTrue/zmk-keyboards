@@ -173,7 +173,7 @@
     &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     BPREV     BVOLD     BVOLU     BNEXT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │OutToggle│BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │ // shift to clear profile
-    &none     &none     &none     &bt BT_CLR &none         OUTTOG    &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
+    &none     &none     &none     &bt BT_CLR &none        &none      &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
                         &trans    &none     &none         BSTOP     BPLAYPSE  BMUTE
