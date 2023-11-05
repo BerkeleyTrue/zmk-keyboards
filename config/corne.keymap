@@ -16,7 +16,7 @@
 #define ENTSYM  &lt SYM   RET
 #define SPCNAV  &lt NAV   SPACE
 #define TABMSE  &lt MOUSE TAB
-#define ESCMED  &mo MEDIA
+#define ESCMED  &mo MEDIA ESC
 #define DELFUN  &lt FUN   DEL
 
 // shorter codes
@@ -37,6 +37,12 @@
 // Home row mods
 #define HRML(k1, k2, k3, k4) &mt LSHFT k1 &mt LCTRL k2 &mt LALT k3 &mt LGUI k4
 #define HRMR(k1, k2, k3, k4) &mt RSHFT k1 &mt RCTRL k2 &mt RALT k3 &mt RGUI k4
+
+/ {
+  chosen {
+    zmk,matrix_transform = &five_column_transform;
+  };
+};
 
 / {
   behaviors {
