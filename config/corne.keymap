@@ -83,6 +83,13 @@
       bindings = <&bt BT_SEL 3>, <&bt BT_CLR>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    bts4_cl: bt_sel4_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL4_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 4>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
   };
   keymap {
     compatible = "zmk,keymap";
@@ -109,8 +116,8 @@
 // │    [    │    7    │    8    │    9    │    ]    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp LBKT  &kp N7    &kp N8    &kp N9    &kp RBKT      &none     &none     &none     &none     &none
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    ;    │    4    │    5    │    6    │    =    │   │   NOP   │  SHIFT  │  CTRL   │   ALT   │  SUPER  │
-    &kp SEMI  &kp N4    &kp N5    &kp N6    &kp EQUAL     &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
+// │    ;    │    4    │    5    │    6    │    =    │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
+    &kp SEMI  &kp N4    &kp N5    &kp N6    &kp EQUAL     &none     &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │    `    │    1    │    2    │    3    │    \    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp TILDE &kp N1    &kp N2    &kp N3    &kp FSLH      &none     &none     &none     &none     &none
@@ -127,8 +134,8 @@
 // │    {    │    &    │    *    │    (    │    }    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp LBRC  &kp AMPS  &kp STAR  &kp LPAR  &kp RBRC      &none     &none     &none     &none     &none
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    ;    │    $    │    %    │    ^    │    +    │   │   NOP   │  SHIFT  │  CTRL   │   ALT   │  SUPER  │
-    &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
+// │    ;    │    $    │    %    │    ^    │    +    │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
+    &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      &none     &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │    `    │    !    │    @    │    #    │    |    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp TILDE &kp EXCL  &kp AT    &kp HASH  &kp PIPE      &none     &none     &none     &none     &none
@@ -144,8 +151,8 @@
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
     &none     &none     &none     &none     &none         BREDO     BPSTE     BCPY      BCUT      BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
-    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+// │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  INSERT │  HOME   │  PGDN   │   PGUP  │   END   │
     &none     &none     &none     &none     &none         &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
@@ -161,8 +168,8 @@
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
     &none     &none     &none     &none     &none         BREDO     BPSTE     BCPY      BCUT      BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
-    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+// │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │  HOME   │  PGDN   │   PGUP  │   END   │
     &none     &none     &none     &none     &none         &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
@@ -178,16 +185,16 @@
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &none     &none     &none     &none     &none         &none     &none     &none     &none     &none
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   SUPER │   ALT   │   CTRL  │   SHIFT │   NOP   │   │   NOP   │PREV_TRCK│ VOl_DOWN│  VOL_UP │NEXT_TRCK│
-    &kp LGUI  &kp LALT  &kp LCTRL &kp LSHFT &none         &none     BPREV     BVOLD     BVOLU     BNEXT
+// │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │   NOP   │PREV_TRCK│ VOl_DOWN│  VOL_UP │NEXT_TRCK│
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  &none         &none     BPREV     BVOLD     BVOLU     BNEXT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │OutToggle│BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │ // shift to clear profile
-    &none     &none     &none     &bt BT_CLR &none    &none     &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │BTROF 4  │// shift to clear profile
+    &none     &none     &none     &bt BT_CLR &none        &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl  &bts4_cl
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
                         &trans    &none     &none         BSTOP     BPLAYPSE  BMUTE
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
-      >;
+      >│
     };
     function_layer { // layer 6 (function)
       bindings = <
@@ -195,8 +202,8 @@
 // │   F12   │   F7    │   F8    │   F9    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp F12   &kp F7    &kp F8    &kp F9    &none         &none     &none     &none     &none     &none
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   F11   │   F4    │   F5    │   F6    │   NOP   │   │   NOP   │   SHIFT │   CTRL  │   ALT   │  SUPER  │
-    &kp F11   &kp F4    &kp F5    &kp F6    &none         &none     &kp RSHFT &kp RCTRL &kp RALT  &kp RGUI
+// │   F11   │   F4    │   F5    │   F6    │   NOP   │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
+    &kp F11   &kp F4    &kp F5    &kp F6    &none         &none     &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   F10   │   F1    │   F2    │   F3    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp F10   &kp F1    &kp F2    &kp F3    &none         &none     &none     &none     &none     &none
