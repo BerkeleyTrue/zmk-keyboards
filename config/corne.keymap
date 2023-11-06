@@ -194,7 +194,7 @@
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
                         &trans    &none     &none         BSTOP     BPLAYPSE  BMUTE
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
-      >│
+      >;
     };
     function_layer { // layer 6 (function)
       bindings = <
