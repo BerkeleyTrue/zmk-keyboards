@@ -2,8 +2,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
-#include "keys/36.h"
-#include "includes/morphs.dtsi"
 
 // layers
 #define DEF     0
@@ -13,6 +11,9 @@
 #define MOUSE   4
 #define MEDIA   5
 #define FUN     6
+
+#include "keys/36.h"
+#include "includes/morphs.dtsi"
 
 // Layer switching
 #define NUM_BSC  &lt NUM   BSPC
