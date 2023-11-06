@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
+#include "includes/morphs.dtsi"
 
 // layers
 #define DEF     0
@@ -58,41 +59,6 @@
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
-    bts0_cl: bt_sel0_clear {
-      compatible = "zmk,behavior-mod-morph";
-      label = "BT_SEL0_CLEAR";
-      #binding-cells = <0>;
-      bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    bts1_cl: bt_sel1_clear {
-      compatible = "zmk,behavior-mod-morph";
-      label = "BT_SEL1_CLEAR";
-      #binding-cells = <0>;
-      bindings = <&bt BT_SEL 1>, <&bt BT_CLR>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    bts2_cl: bt_sel2_clear {
-      compatible = "zmk,behavior-mod-morph";
-      label = "BT_SEL2_CLEAR";
-      #binding-cells = <0>;
-      bindings = <&bt BT_SEL 2>, <&bt BT_CLR>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    bts3_cl: bt_sel3_clear {
-      compatible = "zmk,behavior-mod-morph";
-      label = "BT_SEL3_CLEAR";
-      #binding-cells = <0>;
-      bindings = <&bt BT_SEL 3>, <&bt BT_CLR>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
-    bts4_cl: bt_sel4_clear {
-      compatible = "zmk,behavior-mod-morph";
-      label = "BT_SEL4_CLEAR";
-      #binding-cells = <0>;
-      bindings = <&bt BT_SEL 4>, <&bt BT_CLR>;
-      mods = <(MOD_LSFT|MOD_RSFT)>;
-    };
   };
   keymap {
     compatible = "zmk,keymap";
@@ -102,11 +68,11 @@
 // │    Q    │    W    │    E    │    R    │    T    │   │    Y    │    U    │    I    │    O    │    P    │
     &kp Q     &kp W     &kp E     &kp R     &kp T         &kp Y     &kp U     &kp I     &kp O     &kp P
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    A    │    S    │    D    │    F    │    G    │   │    H    │    J    │    K    │    L    │    ;    │
-    HRML(A,       S,        D,        F)    &kp G         &kp H     HRMR(J,       K,        L,       SEMI)
+// │    A    │    S    │    D    │    F    │    G    │   │    H    │    J    │    K    │    L    │    '    │
+    HRML(A,       S,        D,        F)    &kp G         &kp H     HRMR(J,       K,        L,       SQT)
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │    ,    │    .    │    /    │
-    &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH
+// │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │   ,/;   │   ./:   │   ?/!   │
+    &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &cma_smi  &dot_cln  &qmrk_ex
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │ESC/Media│Del/Nav  │Spc/Mouse│   │ENT/Symbs│BKSP/Numb│TAB/Fun  │
                         MED_ESC   NAV_DEL   MSE_SPC       SYM_ENT   NUM_BSC   FUN_TAB

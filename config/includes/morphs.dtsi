@@ -1,0 +1,60 @@
+/ {
+  behaviors {
+    bts0_cl: bt_sel0_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL0_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 0>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    bts1_cl: bt_sel1_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL1_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 1>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    bts2_cl: bt_sel2_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL2_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 2>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    bts3_cl: bt_sel3_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL3_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 3>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    bts4_cl: bt_sel4_clear {
+      compatible = "zmk,behavior-mod-morph";
+      label = "BT_SEL4_CLEAR";
+      #binding-cells = <0>;
+      bindings = <&bt BT_SEL 4>, <&bt BT_CLR>;
+      mods = <(MOD_LSFT|MOD_RSFT)>;
+    };
+    cma_smi: comma_semi {
+      compatible = "zmk,behavior-mod-morph";
+      label = "COMMA_SEMI";
+      #binding-cells = <0>;
+      bindings = <&kp COMMA>, <&kp SEMI>;
+      mods = <(MOD_LSFT)>;
+    };
+    dot_cln: dot_colon {
+      compatible = "zmk,behavior-mod-morph";
+      label = "DOT_COLON";
+      #binding-cells = <0>;
+      bindings = <&kp DOT>, <&kp COLON>;
+      mods = <(MOD_LSFT)>;
+    };
+    qmrk_ex: qmark_exclamation {
+      compatible = "zmk,behavior-mod-morph";
+      label = "QMARK_EXCLAMATION";
+      #binding-cells = <0>;
+      bindings = <&kp QMARK>, <&kp EXCL>;
+      mods = <(MOD_LSFT)>;
+    };
+  };
+};
