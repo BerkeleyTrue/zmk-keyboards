@@ -15,11 +15,11 @@
 
 // Layer switching
 #define NUM_BSC  &lt NUM   BSPC
-#define SYM_ENT  &lt SYM   RET
-#define NAV_DEL  &lt NAV   DEL
-#define MSE_SPC  &lt MOUSE SPACE
-#define MED_ESC  &lt MEDIA ESC
-#define FUN_TAB  &lt FUN   TAB
+#define SYM_DEL  &lt SYM   DEL
+#define NAV_SPC  &lt NAV   SPACE
+#define MSE_ESC  &lt MOUSE ESC
+#define MED_TAB  &lt MEDIA TAB
+#define FUN_ENT  &lt FUN   RET
 
 // shorter codes
 #define BPSTE    &kp  K_PASTE
@@ -74,8 +74,7 @@
 // │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │   ,/;   │   ./:   │   ?/!   │
     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &cma_smi  &dot_cln  &qmrk_ex
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │ESC/Media│Del/Nav  │Spc/Mouse│   │ENT/Symbs│BKSP/Numb│TAB/Fun  │
-                        MED_ESC   NAV_DEL   MSE_SPC       SYM_ENT   NUM_BSC   FUN_TAB
+                        MED_TAB   SYM_DEL   MSE_ESC       NAV_SPC   NUM_BSC   FUN_ENT
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
