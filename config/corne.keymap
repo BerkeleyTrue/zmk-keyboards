@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // layers
 #define DEF     0
@@ -188,7 +189,7 @@
     _x_       _x_       _x_       _x_       _x_           _x_       _x_       _x_       _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │   NOP   │PREV_TRCK│ VOl_DOWN│  VOL_UP │NEXT_TRCK│
-    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           _x_       BPREV     BVOLD     BVOLU     BNEXT
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           OUTTOG    BPREV     BVOLD     BVOLU     BNEXT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │BTROF 4  │// shift to clear profile
     _x_       _x_       _x_       &bt BT_CLR _x_          &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl  &bts4_cl
