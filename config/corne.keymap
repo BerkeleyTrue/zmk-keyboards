@@ -12,12 +12,12 @@
 #define FUN     6
 
 // Layer switching
-#define BSCNUM  &lt NUM   BSPC
-#define ENTSYM  &lt SYM   RET
-#define SPCNAV  &lt NAV   SPACE
-#define TABMSE  &lt MOUSE TAB
-#define ESCMED  &lt MEDIA ESC
-#define DELFUN  &lt FUN   DEL
+#define NUM_BSC  &lt NUM   BSPC
+#define SYM_ENT  &lt SYM   RET
+#define NAV_DEL  &lt NAV   DEL
+#define MSE_SPC  &lt MOUSE SPACE
+#define MED_ESC  &lt MEDIA ESC
+#define FUN_TAB  &lt FUN   TAB
 
 // shorter codes
 #define BPSTE    &kp  K_PASTE
@@ -107,8 +107,8 @@
 // │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │    ,    │    .    │    /    │
     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &kp COMMA &kp DOT   &kp SLASH
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │ESC/Media│SPC/Navi │Tab/Mouse│   │ENT/Symbs│BKSP/Numb│Del/Funct│
-                        ESCMED    SPCNAV    TABMSE        ENTSYM    BSCNUM    DELFUN
+//                     │ESC/Media│Del/Nav  │Spc/Mouse│   │ENT/Symbs│BKSP/Numb│TAB/Fun  │
+                        MED_ESC   NAV_DEL   MSE_SPC       SYM_ENT   NUM_BSC   FUN_TAB
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -136,7 +136,7 @@
 // │    {    │    &    │    *    │    (    │    }    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp LBRC  &kp AMPS  &kp STAR  &kp LPAR  &kp RBRC      _x_       _x_       _x_       _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    ;    │    $    │    %    │    ^    │    +    │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
+// │    :    │    $    │    %    │    ^    │    +    │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
     &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      _x_       &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │    `    │    !    │    @    │    #    │    |    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
