@@ -151,8 +151,8 @@
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
     &none     &none     &none     &none     &none         BREDO     BPSTE     BCPY      BCUT      BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
-    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+// │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │  LEFT   │  DOWN   │    UP   │  RIGHT  │   NOP   │
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  &none         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  INSERT │  HOME   │  PGDN   │   PGUP  │   END   │
     &none     &none     &none     &none     &none         &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
