@@ -33,6 +33,8 @@
 #define BVOLD    &kp  K_VOL_DN
 #define BVOLU    &kp  K_VOL_UP
 #define OUTTOG   &out OUT_TOG // toggle keyboard output bluetooth/usb
+#define ___      &trans // transparent
+#define _x_      &none
 
 // Home row mods
 #define HRML(k1, k2, k3, k4) &hm LSHFT k1 &hm LCTRL k2 &hm LALT  k3 &hm LGUI  k4
@@ -114,16 +116,16 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │    [    │    7    │    8    │    9    │    ]    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp LBKT  &kp N7    &kp N8    &kp N9    &kp RBKT      &none     &none     &none     &none     &none
+    &kp LBKT  &kp N7    &kp N8    &kp N9    &kp RBKT      _x_       _x_       _x_       _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │    ;    │    4    │    5    │    6    │    =    │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
-    &kp SEMI  &kp N4    &kp N5    &kp N6    &kp EQUAL     &none     &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
+    &kp SEMI  &kp N4    &kp N5    &kp N6    &kp EQUAL     _x_       &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │    `    │    1    │    2    │    3    │    \    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp TILDE &kp N1    &kp N2    &kp N3    &kp FSLH      &none     &none     &none     &none     &none
+    &kp TILDE &kp N1    &kp N2    &kp N3    &kp FSLH      _x_       _x_       _x_       _x_       _x_
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │    .    │    0    │    -    │   │   NOP   │   NOP   │   NOP   │
-                        &kp DOT   &kp N0    &kp MINUS     &none     &trans    &none
+                        &kp DOT   &kp N0    &kp MINUS     _x_       ___       _x_
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -132,16 +134,16 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │    {    │    &    │    *    │    (    │    }    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp LBRC  &kp AMPS  &kp STAR  &kp LPAR  &kp RBRC      &none     &none     &none     &none     &none
+    &kp LBRC  &kp AMPS  &kp STAR  &kp LPAR  &kp RBRC      _x_       _x_       _x_       _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │    ;    │    $    │    %    │    ^    │    +    │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
-    &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      &none     &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
+    &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      _x_       &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │    `    │    !    │    @    │    #    │    |    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp TILDE &kp EXCL  &kp AT    &kp HASH  &kp PIPE      &none     &none     &none     &none     &none
+    &kp TILDE &kp EXCL  &kp AT    &kp HASH  &kp PIPE      _x_       _x_       _x_       _x_       _x_
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │    (    │    )    │    _    │   │   NOP   │   NOP   │   NOP   │
-                        &kp LPAR  &kp RPAR  &kp UNDER     &none     &trans    &none
+                        &kp LPAR  &kp RPAR  &kp UNDER     _x_       ___       _x_
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -149,16 +151,16 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    &none     &none     &none     &none     &none         BREDO     BPSTE     BCPY      BCUT      BUNDO
+    _x_       _x_       _x_       _x_       _x_           BREDO     BPSTE     BCPY      BCUT      BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │  LEFT   │  DOWN   │    UP   │  RIGHT  │   NOP   │
-    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  &none         &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &none
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  INSERT │  HOME   │  PGDN   │   PGUP  │   END   │
-    &none     &none     &none     &none     &none         &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
+    _x_       _x_       _x_       _x_       _x_           &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │   RET   │ BACKSPAC│  DELETE │
-                        &none     &trans    &none         &kp RET   &kp BSPC  &kp DEL
+                        _x_       ___       _x_           &kp RET   &kp BSPC  &kp DEL
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -166,16 +168,16 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    &none     &none     &none     &none     &none         BREDO     BPSTE     BCPY      BCUT      BUNDO
+    _x_       _x_       _x_       _x_       _x_           BREDO     BPSTE     BCPY      BCUT      BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
-    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  &none         &none     &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           _x_       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │  HOME   │  PGDN   │   PGUP  │   END   │
-    &none     &none     &none     &none     &none         &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
+    _x_       _x_       _x_       _x_       _x_           &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │   RET   │ BACKSPAC│  DELETE │
-                        &none     &trans    &none         &kp RET   &kp BSPC  &kp DEL
+                        _x_       ___       _x_           &kp RET   &kp BSPC  &kp DEL
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -183,16 +185,16 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &none     &none     &none     &none     &none         &none     &none     &none     &none     &none
+    _x_       _x_       _x_       _x_       _x_           _x_       _x_       _x_       _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │   NOP   │PREV_TRCK│ VOl_DOWN│  VOL_UP │NEXT_TRCK│
-    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  &none         &none     BPREV     BVOLD     BVOLU     BNEXT
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           _x_       BPREV     BVOLD     BVOLU     BNEXT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │BTROF 4  │// shift to clear profile
-    &none     &none     &none     &bt BT_CLR &none        &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl  &bts4_cl
+    _x_       _x_       _x_       &bt BT_CLR _x_          &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl  &bts4_cl
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
-                        &trans    &none     &none         BSTOP     BPLAYPSE  BMUTE
+                        ___       _x_       _x_           BSTOP     BPLAYPSE  BMUTE
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -200,16 +202,16 @@
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   F12   │   F7    │   F8    │   F9    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp F12   &kp F7    &kp F8    &kp F9    &none         &none     &none     &none     &none     &none
+    &kp F12   &kp F7    &kp F8    &kp F9    _x_           _x_       _x_       _x_       _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   F11   │   F4    │   F5    │   F6    │   NOP   │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
-    &kp F11   &kp F4    &kp F5    &kp F6    &none         &none     &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
+    &kp F11   &kp F4    &kp F5    &kp F6    _x_           _x_       &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   F10   │   F1    │   F2    │   F3    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp F10   &kp F1    &kp F2    &kp F3    &none         &none     &none     &none     &none     &none
+    &kp F10   &kp F1    &kp F2    &kp F3    _x_           _x_       _x_       _x_       _x_       _x_
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   APP   │  SPACE  │   TAB   │   │   NOP   │   NOP   │   NOP   │
-                        &kp K_APP &kp SPACE &kp TAB       &none     &none     &trans
+                        &kp K_APP &kp SPACE &kp TAB       _x_       _x_       ___
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
