@@ -14,6 +14,7 @@
 
 #include "keys/36.h"
 #include "includes/morphs.dtsi"
+#include "includes/combos.dtsi"
 
 // Layer switching
 #define NUM_BSC  &lt NUM   BSPC
