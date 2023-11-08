@@ -66,7 +66,7 @@
     // <
     combo_lbkt {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <LT1 LM1>;
+      key-positions = <LT3 LT4>;
       bindings = <&kp LBKT>;
       layers = <DEF>;
     };
@@ -74,7 +74,7 @@
     // >
     combo_rbkt {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RT1 RM1>;
+      key-positions = <RT3 RT4>;
       bindings = <&kp RBKT>;
       layers = <DEF>;
     };
@@ -90,7 +90,7 @@
     // }
     combo_rbrc {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RT2 RT3>;
+      key-positions = <LT1 LT2>;
       bindings = <&kp RBRC>;
       layers = <DEF>;
     };
@@ -106,7 +106,7 @@
     // )
     combo_rpar {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RM2 RM3>;
+      key-positions = <LM1 LM2>;
       bindings = <&kp RPAR>;
       layers = <DEF>;
     };
@@ -114,7 +114,7 @@
     // [
     combo_lt {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RB1 RB2>;
+      key-positions = <LM3 LM4>;
       bindings = <&kp LBKT>;
       layers = <DEF>;
     };
@@ -122,7 +122,7 @@
     // ]
     combo_gt {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RB2 RB3>;
+      key-positions = <RM3 RM4>;
       bindings = <&kp RBKT>;
       layers = <DEF>;
     };
