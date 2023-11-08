@@ -1,0 +1,11 @@
+/ {
+  macros {
+    // dot_spc1_shift: . + space + shift
+    // used as a ending for a sentence
+    ZMK_MACRO(dot_space_shift,
+      wait-ms = <0>;
+      tap-ms = <5>;
+      bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+    )
+  };
+};

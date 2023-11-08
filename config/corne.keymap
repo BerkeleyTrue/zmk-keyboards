@@ -14,6 +14,7 @@
 
 #include "keys/36.h"
 #include "includes/morphs.dtsi"
+#include "includes/macros.dtsi"
 #include "includes/combos.dtsi"
 
 // Layer switching

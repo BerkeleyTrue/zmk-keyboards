@@ -9,6 +9,13 @@
       layers = <DEF>;
     };
 
+    combo_dot_space_shift {
+      timeout-ms = <50>;
+      key-positions = <LH0 RH0>;
+      bindings = <&dot_space_shift>;
+      layers = <DEF>;
+    };
+
     // right hand sym to plus
     combo_equal {
       timeout-ms = <50>;
