@@ -26,7 +26,7 @@
     combo_lodash {
       timeout-ms = <50>;
       key-positions = <LT0 LT1>;
-      bindings = <&kp MINUS>;
+      bindings = <&kp UNDERSCORE>;
       layers = <DEF>;
     };
 
