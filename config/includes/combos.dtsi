@@ -16,6 +16,20 @@
       layers = <DEF>;
     };
 
+    combo_minus {
+      timeout-ms = <50>;
+      key-positions = <RT0 RT1>;
+      bindings = <&kp MINUS>;
+      layers = <DEF>;
+    };
+
+    combo_lodash {
+      timeout-ms = <50>;
+      key-positions = <LT0 LT1>;
+      bindings = <&kp MINUS>;
+      layers = <DEF>;
+    };
+
     // right hand sym to plus
     combo_equal {
       timeout-ms = <50>;
@@ -29,6 +43,20 @@
       timeout-ms = <50>;
       key-positions = <LM0 LM1>;
       bindings = <&kp PLUS>;
+      layers = <DEF>;
+    };
+
+    combo_backslash_slash {
+      timeout-ms = <50>;
+      key-positions = <RB0 RB1>;
+      bindings = <&kp BACKSLASH>;
+      layers = <DEF>;
+    };
+
+    combo_pipe {
+      timeout-ms = <50>;
+      key-positions = <LB0 LB1>;
+      bindings = <&kp PIPE>;
       layers = <DEF>;
     };
 
