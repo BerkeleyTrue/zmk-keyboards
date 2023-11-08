@@ -33,7 +33,7 @@
 #define BREDO    &kp  K_REDO
 #define BPREV    &kp  K_PREV
 #define BNEXT    &kp  K_NEXT
-#define BPLAYPSE &kp  K_PP
+#define BPLYPSE  &kp  K_PP
 #define BMUTE    &kp  K_MUTE
 #define BSTOP    &kp  K_STOP2
 #define BVOLD    &kp  K_VOL_DN
@@ -94,8 +94,8 @@
 // │   NOP   │    1    │    2    │    3    │   NOP   │   │   NOP   │    1    │    2    │    3    │   NOP   │
     _x_       _x_       _x_       _x_       _x_           _x_       &kp N1    &kp N2    &kp N3    _x_
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │
-                        _x_       _x_       _x_           _x_       ___       _x_
+//                     │  ENTER  │  BCKSPC │  SPACE  │   │   NOP   │   NOP   │   NOP   │
+                        &kp RET   &kp BSPC  &kp SPACE     _x_       ___       _x_
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -112,8 +112,8 @@
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │    !    │    @    │    #    │   NOP   │
     _x_       _x_       _x_       _x_       _x_           _x_       &kp EXCL  &kp AT    &kp HASH  _x_
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │
-                        _x_       ___       _x_           _x_       _x_       _x_
+//                     │   NOP   │   NOP   │   NOP   │   │  SPACE  │   NOP   │  ENTER  │
+                        _x_       ___       _x_           &kp SPACE &kp BSPC  &kp RET
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -126,11 +126,11 @@
 // │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │  LEFT   │  DOWN   │    UP   │  RIGHT  │   NOP   │
     &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  INSERT │  HOME   │  PGDN   │   PGUP  │   END   │
-    _x_       _x_       _x_       _x_       _x_           &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  HOME   │  PGDN   │   PGUP  │   END   │  INSERT │
+    _x_       _x_       _x_       _x_       _x_           &kp HOME  &kp PG_DN &kp PG_UP  &kp END  &kp INS
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │   NOP   │   NOP   │   NOP   │   │   RET   │ BACKSPAC│  DELETE │
-                        _x_       ___       _x_           &kp RET   &kp BSPC  &kp DEL
+//                     │  ENTER  │  BCKSPC │  SPACE  │   │   NOP   │   NOP   │   NOP   │
+                        &kp RET   &kp BSPC  &kp SPACE     ___       _x_       _x_
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -143,11 +143,11 @@
 // │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │  LEFT   │  DOWN   │    UP   │  RIGHT  │   NOP   │
     &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │  HOME   │  PGDN   │   PGUP  │   END   │
-    _x_       _x_       _x_       _x_       _x_           &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  HOME   │  PGDN   │   PGUP  │   END   │  INSERT │
+    _x_       _x_       _x_       _x_       _x_           &kp HOME  &kp PG_DN &kp PG_UP  &kp END  &kp INS
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │   NOP   │   NOP   │   NOP   │   │   RET   │ BACKSPAC│  DELETE │
-                        _x_       ___       _x_           &kp RET   &kp BSPC  &kp DEL
+//                     │   NOP   │   NOP   │   NOP   │   │   RET   │ BCKSPC  │  ENTER  │
+                        _x_       _x_       ___           &kp SPACE &kp BSPC  &kp RET
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -164,7 +164,7 @@
     _x_       _x_       _x_       &bt BT_CLR _x_          &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl  &bts4_cl
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
-                        ___       _x_       _x_           BSTOP     BPLAYPSE  BMUTE
+                        ___       _x_       _x_           BSTOP     BPLYPSE   BMUTE
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -175,7 +175,7 @@
     &kp F12   &kp F7    &kp F8    &kp F9    _x_           _x_       _x_       _x_       _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   F11   │   F4    │   F5    │   F6    │   NOP   │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
-    &kp F11   &kp F4    &kp F5    &kp F6    _x_           _x_       &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
+    &kp F11   &kp F4    &kp F5    &kp F6    _x_           _x_       &kp RGUI  &kp RALT  &kp RCTRL &kp RSHFT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   F10   │   F1    │   F2    │   F3    │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
     &kp F10   &kp F1    &kp F2    &kp F3    _x_           _x_       _x_       _x_       _x_       _x_
