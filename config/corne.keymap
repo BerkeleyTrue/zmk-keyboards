@@ -74,8 +74,8 @@
 // │    A    │    S    │    D    │    F    │    G    │   │    H    │    J    │    K    │    L    │    '    │
     HRML(A,       S,        D,        F)    &kp G         &kp H     HRMR(J,       K,        L,       SQT)
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │   ,/;   │   ./:   │   ?/!   │
-    &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &cma_smi  &dot_cln  &qmrk_ex
+// │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │   ,/;   │   ./:   │    /    │
+    &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &cma_smi  &dot_cln  &kp FSLH
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
                         MED_TAB   SYM_DEL   MSE_ESC       NAV_SPC   NUM_BSC   FUN_ENT
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
@@ -84,17 +84,17 @@
     number_layer { // layer 1 (numbers)
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
-// │    [    │    7    │    8    │    9    │    ]    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp LBKT  &kp N7    &kp N8    &kp N9    &kp RBKT      _x_       _x_       _x_       _x_       _x_
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │    7    │    8    │    9    │   NOP   │
+    _x_       _x_       _x_       _x_       _x_           _x_       &kp N7    &kp N8    &kp N9    _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    ;    │    4    │    5    │    6    │    =    │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
-    &kp SEMI  &kp N4    &kp N5    &kp N6    &kp EQUAL     _x_       &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
+// │  SHIFT  │  CTRL   │   ALT   │   GUI   │   NOP   │   │   NOP   │    4    │    5    │    6    │   NOP   │
+    &kp LSHFT &kp LCTRL &kp LALT  &kp LGUI  _x_           _x_       &kp N4    &kp N5    &kp N6    _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    `    │    1    │    2    │    3    │    \    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp TILDE &kp N1    &kp N2    &kp N3    &kp FSLH      _x_       _x_       _x_       _x_       _x_
+// │   NOP   │    1    │    2    │    3    │   NOP   │   │   NOP   │    1    │    2    │    3    │   NOP   │
+    _x_       _x_       _x_       _x_       _x_           _x_       &kp N1    &kp N2    &kp N3    _x_
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │    .    │    0    │    -    │   │   NOP   │   NOP   │   NOP   │
-                        &kp DOT   &kp N0    &kp MINUS     _x_       ___       _x_
+//                     │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │
+                        _x_       _x_       _x_           _x_       ___       _x_
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -102,17 +102,17 @@
     symbol_layer { // layer 2 (symbols)
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
-// │    {    │    &    │    *    │    (    │    }    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp LBRC  &kp AMPS  &kp STAR  &kp LPAR  &kp RBRC      _x_       _x_       _x_       _x_       _x_
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │    &    │    *    │   NOP   │   NOP   │
+    _x_       _x_       _x_       _x_       _x_           _x_       &kp AMPS  &kp STAR  _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    :    │    $    │    %    │    ^    │    +    │   │   NOP   │  SUPER  │   ALT   │  CTRL   │  SHIFT  │
-    &kp COLON &kp DLLR  &kp PRCNT &kp CARET &kp PLUS      _x_       &kp RGUI  &kp RALT  &kp RCTRL  &kp RSHFT
+// │  SHIFT  │   CTRL  │   ALT   │   GUI   │    +    │   │   NOP   │    $    │    %    │    ^    │   NOP   │
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           _x_       &kp DLLR  &kp PRCNT &kp CARET _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │    `    │    !    │    @    │    #    │    |    │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
-    &kp TILDE &kp EXCL  &kp AT    &kp HASH  &kp PIPE      _x_       _x_       _x_       _x_       _x_
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │    !    │    @    │    #    │   NOP   │
+    _x_       _x_       _x_       _x_       _x_           _x_       &kp EXCL  &kp AT    &kp HASH  _x_
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │   NOP   │   NOP   │   NOP   │   │    (    │    )    │    _    │
-                        _x_       ___       _x_           &kp LPAR  &kp RPAR  &kp UNDER
+//                     │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │
+                        _x_       ___       _x_           _x_       _x_       _x_
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
@@ -139,8 +139,8 @@
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
     _x_       _x_       _x_       _x_       _x_           BREDO     BPSTE     BCPY      BCUT      BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │   NOP   │  LEFT   │  DOWN   │    UP   │  RIGHT  │
-    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           _x_       &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT
+// │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │  LEFT   │  DOWN   │    UP   │  RIGHT  │   NOP   │
+    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │  HOME   │  PGDN   │   PGUP  │   END   │
     _x_       _x_       _x_       _x_       _x_           &kp INS   &kp HOME  &kp PG_DN &kp PG_UP  &kp END
