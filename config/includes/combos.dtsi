@@ -5,6 +5,14 @@
   combos {
     compatible = "zmk,combos";
 
+/*
+  ╭─────────────────────────┬─────────────────────────╮
+  │ LT4 LT3 LT2 LT1 LT0     │     RT0 RT1 RT2 RT3 RT4 │
+  │ LM4 LM3 LM2  <--L̵M̵0̵-<CAPSWRD>-R̵M̵0̵-->  RT2 RM3 RM4 │
+  │ LB4 LB3 LB2 LB1 LB0     │     RB0 RB1 RB2 RB3 RB4 │
+  ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯
+*/
     combo_caps_word {
       timeout-ms = <COMBO_TERM_SLOW>;
       key-positions = <LM1 RM1>;
@@ -12,6 +20,14 @@
       layers = <DEF>;
     };
 
+/*
+  ╭─────────────────────────┬─────────────────────────╮
+  │ LT4 LT3 LT2 LT1 LT0     │     RT0 RT1 RT2 RT3 RT4 │
+  │ LM4 LM3 LM2 LM1 LM0     │     RM0 RM1 RM2 RM3 RM4 │
+  │ LB4 LB3 LB2 LB1 LB0     │     RB0 RB1 RB2 RB3 RB4 │
+  ╰───────────╮ LH2 LH1 -< .␣⇧ >- RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯
+*/
     combo_dot_space_shift {
       timeout-ms = <COMBO_TERM_SLOW>;
       key-positions = <LH0 RH0>;
@@ -19,6 +35,14 @@
       layers = <DEF>;
     };
 
+/*
+  ╭─────────────────────────┬─────────────────────────╮
+  │ LT4 LT3 LT2 -< _ >-     │     -< - >- RT2 RT3 RT4 │
+  │ LM4 LM3 LM2 -< + >-     │     -< = >- RM2 RM3 RM4 │
+  │ LB4 LB3 LB2 -< | >-     │     -< \ >- RB2 RB3 RB4 │
+  ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯
+*/
     combo_minus {
       timeout-ms = <COMBO_TERM_SLOW>;
       key-positions = <RT0 RT1>;
@@ -32,8 +56,6 @@
       bindings = <&kp UNDERSCORE>;
       layers = <DEF>;
     };
-
-    // right hand sym to plus
     combo_equal {
       timeout-ms = <COMBO_TERM_SLOW>;
       key-positions = <RM0 RM1>;
@@ -48,7 +70,6 @@
       bindings = <&kp PLUS>;
       layers = <DEF>;
     };
-
     combo_backslash_slash {
       timeout-ms = <COMBO_TERM_SLOW>;
       key-positions = <RB0 RB1>;
@@ -58,71 +79,79 @@
 
     combo_pipe {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <LB0 LB1>;
+      key-positions = <LB1 LB0>;
       bindings = <&kp PIPE>;
       layers = <DEF>;
     };
 
-    // <
-    combo_lbkt {
-      timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <LT3 LT4>;
-      bindings = <&kp LBKT>;
-      layers = <DEF>;
-    };
-
-    // >
-    combo_rbkt {
-      timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RT3 RT4>;
-      bindings = <&kp RBKT>;
-      layers = <DEF>;
-    };
-
+/*
+  ╭─────────────────────────┬─────────────────────────╮
+  │ LT4 ┌ <  ┬  { ┐ LT0     │     RT0 ┌ }  ┬  > ┐ RT4 │
+  │ LM4 └ [  ┴  ( ┘ LM0     │     RM0 └ )  ┴  ] ┘ RM4 │
+  │ LB4 LB3 LB2 LB1 LB0     │     RB0 RB1 RB2 RB3 RB4 │
+  ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯
+*/
     // {
     combo_lbrc {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RT1 RT2>;
+      key-positions = <LT2 LT1>;
       bindings = <&kp LBRC>;
       layers = <DEF>;
     };
-
-    // }
-    combo_rbrc {
+    // <
+    combo_lbkt {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <LT1 LT2>;
-      bindings = <&kp RBRC>;
+      key-positions = <LT3 LT2>;
+      bindings = <&kp LESS_THAN>;
+      layers = <DEF>;
+    };
+
+
+    // [
+    combo_lt {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      key-positions = <LM3 LM2>;
+      bindings = <&kp LBKT>;
       layers = <DEF>;
     };
 
     // (
     combo_lpar {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RM1 RM2>;
+      key-positions = <LM2 LM1>;
       bindings = <&kp LPAR>;
+      layers = <DEF>;
+    };
+
+    // }
+    combo_rbrc {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      key-positions = <RT1 RT2>;
+      bindings = <&kp RBRC>;
+      layers = <DEF>;
+    };
+
+    // >
+    combo_rbkt {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      key-positions = <RT2 RT3>;
+      bindings = <&kp GREATER_THAN>;
       layers = <DEF>;
     };
 
     // )
     combo_rpar {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <LM1 LM2>;
+      key-positions = <RM1 RM2>;
       bindings = <&kp RPAR>;
-      layers = <DEF>;
-    };
-
-    // [
-    combo_lt {
-      timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <LM3 LM4>;
-      bindings = <&kp LBKT>;
       layers = <DEF>;
     };
 
     // ]
     combo_gt {
       timeout-ms = <COMBO_TERM_SLOW>;
-      key-positions = <RM3 RM4>;
+      key-positions = <RM2 RM3>;
       bindings = <&kp RBKT>;
       layers = <DEF>;
     };
