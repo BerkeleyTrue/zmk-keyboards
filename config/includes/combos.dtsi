@@ -1,5 +1,8 @@
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 50
+#define COMBO_PRIOR_IDLE 150
+
+// use require-prior-idle-ms for combos
 
 / {
   combos {
@@ -18,6 +21,7 @@
       key-positions = <LM1 RM1>;
       bindings = <&caps_word>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
 /*
@@ -33,6 +37,7 @@
       key-positions = <LH0 RH0>;
       bindings = <&dot_space_shift>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
 /*
@@ -48,6 +53,7 @@
       key-positions = <RT0 RT1>;
       bindings = <&kp MINUS>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
     combo_lodash {
@@ -55,12 +61,14 @@
       key-positions = <LT0 LT1>;
       bindings = <&kp UNDERSCORE>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
     combo_equal {
       timeout-ms = <COMBO_TERM_SLOW>;
       key-positions = <RM0 RM1>;
       bindings = <&kp EQUAL>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
     // right hand sym to plus
@@ -69,12 +77,14 @@
       key-positions = <LM0 LM1>;
       bindings = <&kp PLUS>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
     combo_backslash_slash {
       timeout-ms = <COMBO_TERM_SLOW>;
       key-positions = <RB0 RB1>;
       bindings = <&kp BACKSLASH>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
     combo_pipe {
@@ -82,6 +92,7 @@
       key-positions = <LB1 LB0>;
       bindings = <&kp PIPE>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
 /*
@@ -98,6 +109,7 @@
       key-positions = <LT2 LT1>;
       bindings = <&kp LBRC>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
     // <
     combo_lbkt {
@@ -105,8 +117,8 @@
       key-positions = <LT3 LT2>;
       bindings = <&kp LESS_THAN>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
-
 
     // [
     combo_lt {
@@ -114,6 +126,7 @@
       key-positions = <LM3 LM2>;
       bindings = <&kp LBKT>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
     // (
@@ -122,6 +135,7 @@
       key-positions = <LM2 LM1>;
       bindings = <&kp LPAR>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
     // }
@@ -130,6 +144,7 @@
       key-positions = <RT1 RT2>;
       bindings = <&kp RBRC>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
     // >
@@ -138,6 +153,7 @@
       key-positions = <RT2 RT3>;
       bindings = <&kp GREATER_THAN>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
     // )
@@ -146,6 +162,7 @@
       key-positions = <RM1 RM2>;
       bindings = <&kp RPAR>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
     // ]
@@ -154,7 +171,55 @@
       key-positions = <RM2 RM3>;
       bindings = <&kp RBKT>;
       layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
     };
 
+/*
+  ╭─────────────────────────┬─────────────────────────╮
+  │ LT4 LT3 LT2 LT1 LT0     │     RT0 RT1 RT2 RT3 RT4 │
+  │ LM4 LM3 LM2 LM1 LM0     │     RM0 RM1 RM2 RM3 RM4 │
+  │ LB4 -<ESC>- LB1 LB0     │     RB0 RB1 -<ENT>- RB4 │
+  ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯
+*/
+
+    combo_esc {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      key-positions = <LB3 LB2>;
+      bindings = <&kp ESC>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+    };
+
+    combo_ent {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      key-positions = <RB2 RB3>;
+      bindings = <&kp RET>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+    };
+
+/*
+  ╭─────────────────────────┬─────────────────────────╮
+  │ LT4 LT3 LT2 LT1 LT0     │     RT0 RT1 RT2 RT3 RT4 │
+  │ LM4 LM3 LM2 LM1 LM0     │     RM0 RM1 RM2 RM3 RM4 │
+  │ -< ~ >- LB2 LB1 LB0     │     RB0 RB1 RB2 --<`>-- │
+  ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯
+*/
+
+    combo_tilde {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      key-positions = <LB4 LB3>;
+      bindings = <&kp TILDE>;
+      layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+    };
+
+    combo_grave {
+      timeout-ms = <COMBO_TERM_SLOW>;
+      key-positions = <RB3 RB4>;
+      bindings = <&kp GRAVE>;
+      layers = <DEF>;
+      require-prior-idle-ms = <COMBO_PRIOR_IDLE>;
+    };
   };
 };
