@@ -16,14 +16,15 @@
 #include "includes/morphs.dtsi"
 #include "includes/macros.dtsi"
 #include "includes/combos.dtsi"
+#include "includes/behaviors.dtsi"
 
 // Layer switching
-#define NUM_BSC  &lt NUM   BSPC
-#define SYM_DEL  &lt SYM   DEL
-#define NAV_SPC  &lt NAV   SPACE
-#define MSE_ESC  &lt MOUSE ESC
-#define MED_TAB  &lt MEDIA TAB
-#define FUN_ENT  &lt FUN   RET
+#define PRMRTHMB  &lt NUM   BSPC
+#define PRMLTHMB  &lt SYM   DEL
+#define TERRTHMB  &lt NAV   SPACE
+#define TERLTHMB  &lt MOUSE ESC
+#define SECLTHMB  &lt MEDIA TAB
+#define SECRTHMB  &lt FUN   RET
 
 // shorter codes
 #define BPSTE    &kp  K_PASTE
@@ -43,8 +44,8 @@
 #define _x_      &none
 
 // Home row mods
-#define HRML(k1, k2, k3, k4) &hm LSHFT k1 &hm LCTRL k2 &hm LALT  k3 &hm LGUI  k4
-#define HRMR(k1, k2, k3, k4) &hm RGUI  k1 &hm RALT  k2 &hm RCTRL k3 &hm RSHFT k4
+#define HRML(k1, k2, k3, k4) &hml LSHFT k1 &hml LCTRL k2 &hml LALT  k3 &hml LGUI  k4
+#define HRMR(k1, k2, k3, k4) &hmr RGUI  k1 &hmr RALT  k2 &hmr RCTRL k3 &hmr RSHFT k4
 
 / {
   chosen {
@@ -53,17 +54,6 @@
 };
 
 / {
-  behaviors {
-    hm: homerow_mods_left {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MOD";
-        #binding-cells = <2>;
-        tapping-term-ms = <300>;
-        quick-tap-ms = <250>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
-  };
   keymap {
     compatible = "zmk,keymap";
     default_layer { // layer 0 (default)
@@ -78,7 +68,7 @@
 // │    Z    │    X    │    C    │    V    │    B    │   │    N    │    M    │   ,/;   │   ./:   │    /    │
     &kp Z     &kp X     &kp C     &kp V     &kp B         &kp N     &kp M     &cma_smi  &dot_cln  &kp FSLH
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-                        MED_TAB   SYM_DEL   MSE_ESC       NAV_SPC   NUM_BSC   FUN_ENT
+                        SECLTHMB  PRMLTHMB  TERLTHMB      TERRTHMB  PRMRTHMB  SECRTHMB
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
