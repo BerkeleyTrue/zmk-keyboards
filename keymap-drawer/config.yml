@@ -309,7 +309,10 @@ parse_config:
     '&sys_reset': "🔄"
     '&reset_td': "🔄"
     '&dot_space_shift': ".⎵$$mdi:gesture-tap-hold$$"
-    '&key_repeat': $$mid:repeat-variant$$
+    '&key_repeat': $$mdi:repeat-variant$$
+    "&ltr SYM 0":
+      tap: $$mdi:repeat-variant$$
+      hold: $$mdi:symbol$$
 
     # Bluetooth
     "&bt BT_SEL 0":
@@ -470,14 +473,15 @@ parse_config:
     CAPS: $$mdi:apple-keyboard-caps$$
 
     # Sound
-    C_MUTE: $$mdi:volume-off$$
-    C_VOL_UP: $$mdi:volume-high$$
-    C_VOL_DN: $$mdi:volume-low$$
+    K_MUTE: $$mdi:volume-off$$
+    K_VOL_UP: $$mdi:volume-high$$
+    K_VOL_DN: $$mdi:volume-low$$
 
     # Media
-    C_NEXT: $$mdi:skip-next$$
-    C_PREV: $$mdi:skip-previous$$
-    C_PP: $$mdi:play-pause$$
+    K_NEXT: $$mdi:skip-next$$
+    K_PREV: $$mdi:skip-previous$$
+    K_PP: $$mdi:play-pause$$
+    K_STOP2: $$mdi:stop-circle-outline$$
 
     # Bluetooth
     BT_CLR: $$mdi:bluetooth-off$$
