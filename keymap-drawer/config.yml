@@ -113,13 +113,13 @@ draw_config:
 
         --color--layer--text: var(--ctp-maroon);
 
-        --color--key--bg: var(--ctp-overlay0);
+        --color--key--bg: var(--ctp-surface2);
         --color--key--border: var(--ctp-sapphire);
         --color--key--text--tap: var(--color--text);
         --color--key--text--shifted: var(--ctp-subtext0);
         --color--key--text--hold: var(-ctp-teal);
 
-        --color--combo--bg: var(--ctp-crust);
+        --color--combo--bg: var(--ctp-overlay2);
         --color--combo--border: var(--ctp-sky);
         --color--combo--dendron: var(--color--combo--border);
         --color--combo--text--tap: var(--ctp-subtext1);
@@ -283,6 +283,7 @@ draw_config:
 
     /* Outer column + thumb keys */
     .keypos-0,
+    .keypos-9,
     .keypos-10,
     .keypos-19,
     .keypos-20,
@@ -294,7 +295,7 @@ draw_config:
     .keypos-34,
     .keypos-35,
     .keypos-36 {
-        --color--key--bg: var(--ctp-mantle);
+        --color--key--bg: var(--ctp-surface1);
         --color--key--border: var(--ctp--subtext0);
     }
 
@@ -309,31 +310,57 @@ parse_config:
     '&reset_td': "🔄"
     '&dot_space_shift': ".⎵⇧"
     '&key_repeat': "🔁"
-    '&btsc_0': 📶1
-    '&btsc_1': 📶2
-    '&btsc_2': 📶3
-    '&btsc_3': 📶4
-    '&btsc_4': 📶5
-    '&bt BT_NXT': 📶🔼
-    '&bt BT_PRV': 📶🔽
-    '&bt BT_CLR': 📶❌
+
+    # Bluetooth
+    "&bt BT_SEL 0":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 0
+    "&bt BT_SEL 1":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 1
+    "&bt BT_SEL 2":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 2
+    "&bt BT_SEL 3":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 3
+    "&bt BT_SEL 4":
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: 4
+    '&bt BT_NXT':
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: $$mdia:chevron-right$$
+    '&bt BT_PRV':
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: $$mdia:chevron-left$$
+    '&bt BT_CLR':
+      shifted: $$mdi:bluetooth-connect$$
+      tap: ""
+      hold: $$mdia:close-box-outline$$
+
+    # Empty
+    "&none":
+      tap: $$mdi:minus-circle-outline$$
+      type: none
+
+    "&out OUT_TOG":
+      shifted: $$mdi:usb$$
+      tap: $$mdi:toggle-switch$$
+      hold: $$mdi:bluetooth$$
+
   sticky_label: sticky
   trans_legend:
     t: " "
     type: trans
   mark_alternate_layer_activators: false
   zmk_keycode_map:
-    'LC(INS)': "📄"
-    'LS(INS)': "📋"
-    'LS(DEL)': "✂️"
-    'LG(Q)': "⌘Q"
-    'LC(W)': "⌃W"
-    'LC(T)': "⌃T"
-    'LC(TAB)': "⌃⇥"
-    'LS(LC(TAB))': "⇧⌃⇥"
-    MEH: MEH
-    'LC(LS(LALT))': "MEH"
-    K_UNDO: "↩️"
     EXCLAMATION: '!'
     EXCL: '!'
     AT_SIGN: '@'
@@ -398,54 +425,68 @@ parse_config:
     NON_US_HASH: '#'
     NUHS: '#'
     TILDE2: '~'
-    C_NEXT: ⏭️
-    C_PREV: ⏮️
-    C_PP: ⏯️
-    C_MUTE: "🔇"
-    C_VOL_DN: "🔉"
-    C_VOL_UP: "🔊"
-    C_BRI_UP: "🔆"
-    C_BRI_DN: "🔅"
-    K_CMENU: 🌍
-    K_MENU: 🌍
-    K_NEXT: ⏭️
-    K_PREV: ⏮️
-    K_PP: ⏯️
-    K_MUTE: "🔇"
-    K_VOL_DN: "🔉"
-    K_VOL_UP: "🔊"
-    EP_TOG: "🔌"
-    PG_UP: "⇞"
-    HOME: "⇱"
-    END: "⇲"
-    PG_DN: "⇟"
-    LEFT: "←"
-    RIGHT: "→"
-    KP_MULTIPLY: "*"
-    UP: "↑"
-    DOWN: "↓"
-    KP_PLUS: "+"
-    LCTRL: ⌃
-    LALT: ⌥
-    LGUI: ⌘
-    LSHFT: ⇧
-    RCTRL: ⌃
-    LEFT_CONTROL: ⌃
-    LEFT_ALT: ⌥
-    LEFT_GUI: ⌘
-    LEFT_SHFT: ⇧
-    RALT: ⌥
-    RGUI: ⌘
-    RSHFT: ⇧
-    RIGHT_CONTROL: ⌃
-    RIGHT_ALT: ⌥
-    RIGHT_GUI: ⌘
-    RIGHT_SHFT: ⇧
-    TAB: ⇥
-    RET: '⏎'
-    ESC: '⎋'
-    BSPC: ⌫
-    DEL: ⌦
-    SPACE: ⎵
-    PSCRN: 🖨️
+
+    # Modifiers
+    LCTRL: $$mdi:apple-keyboard-control$$
+    LALT: $$mdi:apple-keyboard-option$$
+    LSHIFT: $$mdi:apple-keyboard-shift$$
+    LSHFT: $$mdi:apple-keyboard-shift$$
+    LCMD: $$mdi:apple-keyboard-command$$
+    RCTRL: $$mdi:apple-keyboard-control$$
+    RALT: $$mdi:apple-keyboard-option$$
+    RSHIFT: $$mdi:apple-keyboard-shift$$
+    RSHFT: $$mdi:apple-keyboard-shift$$
+    RCMD: $$mdi:apple-keyboard-command$$
+    # "Meh" key
+    LS(LC(LALT)): $$mdi:star-three-points$$
+    LC(INS): "📄"
+    LS(INS): "📋"
+    LS(DEL): "✂️"
+    LG(Q): "⌘Q"
+    LC(W): "⌃W"
+    LC(T): "⌃T"
+    LC(TAB): "⌃⇥"
+    LS(LC(TAB)): "⇧⌃⇥"
+    K_UNDO: "↩️"
+
+    # Arrows
+    UP: $$mdi:arrow-up-bold$$
+    DOWN: $$mdi:arrow-down-bold$$
+    LEFT: $$mdi:arrow-left-bold$$
+    RIGHT: $$mdi:arrow-right-bold$$
+
+    # Whitespace
+    ENTER:
+      type: enter
+      tap: $$mdi:keyboard-return$$
+    ESC: $$mdi:keyboard-esc$$
+    TAB: $$mdi:keyboard-tab$$
+    LS(TAB): $$mdi:keyboard-tab-reverse$$
+    SPACE: $$mdi:keyboard-space$$
+    BACKSPACE:
+      type: backspace
+      tap: $$mdi:backspace$$
+    BSPC:
+      type: backspace
+      tap: $$mdi:backspace$$
+    DELETE: $$mdi:backspace-reverse-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+
+    # Locks
+    CAPSLOCK: $$mdi:apple-keyboard-caps$$
+    CAPS: $$mdi:apple-keyboard-caps$$
+
+    # Sound
+    C_MUTE: $$mdi:volume-off$$
+    C_VOL_UP: $$mdi:volume-high$$
+    C_VOL_DN: $$mdi:volume-low$$
+
+    # Media
+    C_NEXT: $$mdi:skip-next$$
+    C_PREV: $$mdi:skip-previous$$
+    C_PP: $$mdi:play-pause$$
+
+    # Bluetooth
+    BT_CLR: $$mdi:bluetooth-off$$
+    BT_SEL: $$mdi:bluetooth-connect$$
   zmk_combos: {}
