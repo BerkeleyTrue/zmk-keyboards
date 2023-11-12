@@ -13,7 +13,6 @@
 #define FUN     6
 
 #include "keys/36.h"
-#include "includes/morphs.dtsi"
 #include "includes/macros.dtsi"
 #include "includes/combos.dtsi"
 #include "includes/behaviors.dtsi"
@@ -151,7 +150,7 @@
     &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           OUTTOG    BPREV     BVOLD     BVOLU     BNEXT
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │BTPROF 0 │BTPROF 1 │BTPROF 2 │BTPROF 3 │BTROF 4  │// shift to clear profile
-    _x_       _x_       _x_       &bt BT_CLR _x_          &bts0_cl  &bts1_cl  &bts2_cl  &bts3_cl  &bts4_cl
+    _x_       _x_       _x_       &bt BT_CLR _x_          &btsc_0   &btsc_1   &btsc_2   &btsc_3   &btsc_4
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │  STOP   │Pause/Ply│  MUTE   │
                         ___       _x_       _x_           BSTOP     BPLYPSE   BMUTE

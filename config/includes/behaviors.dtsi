@@ -38,3 +38,29 @@
 
 MAKE_HRM(hml, &kp, &kp, LEFT_KEYS THUMB_KEYS)    // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, RIGHT_KEYS THUMB_KEYS)  // right-hand HRMs
+
+// Make a BlueTooth Select/Clear morph
+// tap = select,
+// shift + tap = select and clear
+#define MAKE_BTSC(NAME, SEL) \
+  ZMK_BEHAVIOR(NAME, mod_morph, \
+    bindings = <&bt BT_SEL SEL>, <&bt BT_SEL SEL &bt BT_CLR>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+  )
+
+MAKE_BTSC(btsc_0, 0) // select 0th profile
+MAKE_BTSC(btsc_1, 1) // select 1st profile
+MAKE_BTSC(btsc_2, 2) // etc...
+MAKE_BTSC(btsc_3, 3)
+MAKE_BTSC(btsc_4, 4)
+
+// Tap for comma, shift + tap for semicolon
+ZMK_BEHAVIOR(cma_smi, mod_morph, \
+  bindings = <&kp COMMA>, <&kp SEMI>; \
+  mods = <(MOD_LSFT)>; \
+)
+// Tap for period, shift + tap for colon
+ZMK_BEHAVIOR(dot_cln, mod_morph, \
+  bindings = <&kp DOT>, <&kp COLON>; \
+  mods = <(MOD_LSFT)>; \
+)
