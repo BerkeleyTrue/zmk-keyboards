@@ -64,3 +64,11 @@ ZMK_BEHAVIOR(dot_cln, mod_morph, \
   bindings = <&kp DOT>, <&kp COLON>; \
   mods = <(MOD_LSFT)>; \
 )
+
+// layer toggle/repeat
+ZMK_BEHAVIOR(ltr, hold_tap, \
+  flavor = "balanced"; \
+  tapping-term-ms = <280>; \
+  quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
+  bindings = <&mo>, <&key_repeat>; \
+)
