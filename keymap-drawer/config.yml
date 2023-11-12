@@ -122,8 +122,8 @@ draw_config:
         --color--combo--bg: var(--ctp-overlay2);
         --color--combo--border: var(--ctp-sky);
         --color--combo--dendron: var(--color--combo--border);
-        --color--combo--text--tap: var(--ctp-subtext1);
-        --color--combo--text--shifted: var(--ctp-overlay2);
+        --color--combo--text--tap: var(--ctp-surface0);
+        --color--combo--text--shifted: var(--ctp-base);
         --color--combo--text--hold: var(--color--combo--text--tap);
 
         --color--trans--bg: transparent;
@@ -308,41 +308,34 @@ parse_config:
     '&bootloader': "💾"
     '&sys_reset': "🔄"
     '&reset_td': "🔄"
-    '&dot_space_shift': ".⎵⇧"
-    '&key_repeat': "🔁"
+    '&dot_space_shift': ".⎵$$mdi:gesture-tap-hold$$"
+    '&key_repeat': $$mid:repeat-variant$$
 
     # Bluetooth
     "&bt BT_SEL 0":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+      tap: $$mdi:bluetooth-connect$$
       hold: 0
     "&bt BT_SEL 1":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+      tap: $$mdi:bluetooth-connect$$
       hold: 1
     "&bt BT_SEL 2":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+      tap: $$mdi:bluetooth-connect$$
       hold: 2
     "&bt BT_SEL 3":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+      tap: $$mdi:bluetooth-connect$$
       hold: 3
     "&bt BT_SEL 4":
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+      tap: $$mdi:bluetooth-connect$$
       hold: 4
     '&bt BT_NXT':
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+      tap: $$mdi:bluetooth-connect$$
       hold: $$mdi:chevron-right$$
     '&bt BT_PRV':
       shifted: $$mdi:bluetooth-connect$$
       tap: ""
       hold: $$mdi:chevron-left$$
     '&bt BT_CLR':
-      shifted: $$mdi:bluetooth-connect$$
-      tap: ""
+      tap: $$mdi:bluetooth-connect$$
       hold: $$mdi:close-box-outline$$
 
     # Empty
@@ -355,9 +348,9 @@ parse_config:
       tap: $$mdi:toggle-switch$$
       hold: $$mdi:bluetooth$$
 
-  sticky_label: sticky
+  sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
-    t: " "
+    tap: $$mdi:transfer$$
     type: trans
   mark_alternate_layer_activators: false
   zmk_keycode_map:
@@ -431,12 +424,12 @@ parse_config:
     LALT: $$mdi:apple-keyboard-option$$
     LSHIFT: $$mdi:apple-keyboard-shift$$
     LSHFT: $$mdi:apple-keyboard-shift$$
-    LCMD: $$mdi:apple-keyboard-command$$
+    LGUI: $$mdi:apple-keyboard-command$$
     RCTRL: $$mdi:apple-keyboard-control$$
     RALT: $$mdi:apple-keyboard-option$$
     RSHIFT: $$mdi:apple-keyboard-shift$$
     RSHFT: $$mdi:apple-keyboard-shift$$
-    RCMD: $$mdi:apple-keyboard-command$$
+    RGUI: $$mdi:apple-keyboard-command$$
     # "Meh" key
     LS(LC(LALT)): $$mdi:star-three-points$$
     LC(INS): "📄"
@@ -456,7 +449,7 @@ parse_config:
     RIGHT: $$mdi:arrow-right-bold$$
 
     # Whitespace
-    ENTER:
+    RET:
       type: enter
       tap: $$mdi:keyboard-return$$
     ESC: $$mdi:keyboard-esc$$
