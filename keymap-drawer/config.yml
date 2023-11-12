@@ -335,15 +335,15 @@ parse_config:
     '&bt BT_NXT':
       shifted: $$mdi:bluetooth-connect$$
       tap: ""
-      hold: $$mdia:chevron-right$$
+      hold: $$mdi:chevron-right$$
     '&bt BT_PRV':
       shifted: $$mdi:bluetooth-connect$$
       tap: ""
-      hold: $$mdia:chevron-left$$
+      hold: $$mdi:chevron-left$$
     '&bt BT_CLR':
       shifted: $$mdi:bluetooth-connect$$
       tap: ""
-      hold: $$mdia:close-box-outline$$
+      hold: $$mdi:close-box-outline$$
 
     # Empty
     "&none":
