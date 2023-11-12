@@ -150,14 +150,14 @@ parse_config:
     '&reset_td': "🔄"
     '&dot_space_shift': ".⎵⇧"
     '&key_repeat': "🔁"
-    '&btsc_0': 🛜1
-    '&btsc_1': 🛜2
-    '&btsc_2': 🛜3
-    '&btsc_3': 🛜4
-    '&btsc_4': 🛜5
-    '&bt BT_NXT': 🛜🔼
-    '&bt BT_PRV': 🛜🔽
-    '&bt BT_CLR': 🛜❌
+    '&btsc_0': 📶1
+    '&btsc_1': 📶2
+    '&btsc_2': 📶3
+    '&btsc_3': 📶4
+    '&btsc_4': 📶5
+    '&bt BT_NXT': 📶🔼
+    '&bt BT_PRV': 📶🔽
+    '&bt BT_CLR': 📶❌
   sticky_label: sticky
   trans_legend:
     t: " "
@@ -249,6 +249,12 @@ parse_config:
     C_BRI_DN: "🔅"
     K_CMENU: 🌍
     K_MENU: 🌍
+    K_NEXT: ⏭️
+    K_PREV: ⏮️
+    K_PP: ⏯️
+    K_MUTE: "🔇"
+    K_VOL_DN: "🔉"
+    K_VOL_UP: "🔊"
     EP_TOG: "🔌"
     PG_UP: "⇞"
     HOME: "⇱"

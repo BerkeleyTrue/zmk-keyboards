@@ -66,6 +66,11 @@ ZMK_BEHAVIOR(dot_cln, mod_morph, \
 )
 
 // layer toggle/repeat
+// hold = toggle to layer
+// tap = repeat last key
+// you can't use key_repeat directly with &lt, because lt expects a &kp for the second binding
+// use: &ltr SOME_LAYER 0
+// the zero is required to make the binding valid
 ZMK_BEHAVIOR(ltr, hold_tap, \
   flavor = "balanced"; \
   tapping-term-ms = <280>; \
