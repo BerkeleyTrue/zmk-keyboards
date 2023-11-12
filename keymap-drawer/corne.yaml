@@ -11,16 +11,16 @@ layers:
   - I
   - O
   - P
-  - {t: A, h: LSHFT}
-  - {t: S, h: LCTRL}
-  - {t: D, h: LALT}
-  - {t: F, h: LGUI}
+  - {t: A, h: ⇧}
+  - {t: S, h: ⌃}
+  - {t: D, h: ⌥}
+  - {t: F, h: ⌘}
   - G
   - H
-  - {t: J, h: RGUI}
-  - {t: K, h: RALT}
-  - {t: L, h: RCTRL}
-  - {t: '''', h: RSHFT}
+  - {t: J, h: ⌘}
+  - {t: K, h: ⌥}
+  - {t: L, h: ⌃}
+  - {t: '''', h: ⇧}
   - Z
   - X
   - C
@@ -31,12 +31,12 @@ layers:
   - {t: ',', s: ;}
   - {t: ., s: ':'}
   - /
-  - {t: TAB, h: media}
-  - {t: DEL, h: symbol}
-  - {t: ESC, h: mouse}
-  - {t: SPACE, h: navigation}
-  - {t: BSPC, h: number}
-  - {t: RET, h: function}
+  - {t: ⇥, h: media}
+  - {t: ⌦, h: symbol}
+  - {t: ⎋, h: mouse}
+  - {t: ⎵, h: navigation}
+  - {t: ⌫, h: number}
+  - {t: ⏎, h: function}
   number:
   - ''
   - ''
@@ -48,10 +48,10 @@ layers:
   - '8'
   - '9'
   - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - ⇧
+  - ⌃
+  - ⌥
+  - ⌘
   - ''
   - '0'
   - '4'
@@ -68,9 +68,9 @@ layers:
   - '2'
   - '3'
   - ''
-  - RET
-  - BSPC
-  - SPACE
+  - ⏎
+  - ⌫
+  - ⎵
   - ''
   - {type: held}
   - ''
@@ -85,10 +85,10 @@ layers:
   - '*'
   - ''
   - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - ⇧
+  - ⌃
+  - ⌥
+  - ⌘
   - ''
   - ''
   - $
@@ -108,9 +108,9 @@ layers:
   - ''
   - {type: held}
   - ''
-  - SPACE
-  - BSPC
-  - RET
+  - ⎵
+  - ⌫
+  - ⏎
   navigation:
   - ''
   - ''
@@ -121,30 +121,30 @@ layers:
   - PASTE
   - COPY
   - CUT
-  - UNDO
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - ↩️
+  - ⇧
+  - ⌃
+  - ⌥
+  - ⌘
   - ''
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - ''
-  - ''
+  - ←
+  - ↓
+  - ↑
+  - →
   - ''
   - ''
   - ''
   - ''
-  - HOME
-  - PG DN
-  - PG UP
-  - END
+  - ''
+  - ''
+  - ⇱
+  - ⇟
+  - ⇞
+  - ⇲
   - INS
-  - RET
-  - BSPC
-  - SPACE
+  - ⏎
+  - ⌫
+  - ⎵
   - {type: held}
   - ''
   - ''
@@ -158,33 +158,33 @@ layers:
   - PASTE
   - COPY
   - CUT
-  - UNDO
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - ↩️
+  - ⇧
+  - ⌃
+  - ⌥
+  - ⌘
   - ''
-  - LEFT
-  - DOWN
-  - UP
-  - RIGHT
-  - ''
-  - ''
+  - ←
+  - ↓
+  - ↑
+  - →
   - ''
   - ''
   - ''
   - ''
-  - HOME
-  - PG DN
-  - PG UP
-  - END
+  - ''
+  - ''
+  - ⇱
+  - ⇟
+  - ⇞
+  - ⇲
   - INS
   - ''
   - ''
   - {type: held}
-  - SPACE
-  - BSPC
-  - RET
+  - ⎵
+  - ⌫
+  - ⏎
   media:
   - ''
   - ''
@@ -196,10 +196,10 @@ layers:
   - ''
   - ''
   - ''
-  - LSHFT
-  - LCTRL
-  - LALT
-  - LGUI
+  - ⇧
+  - ⌃
+  - ⌥
+  - ⌘
   - ''
   - OUT TOG
   - PREV
@@ -209,13 +209,13 @@ layers:
   - ''
   - ''
   - ''
-  - BT CLR
+  - 🛜❌
   - ''
-  - {t: BT, h: '0', s: BT}
-  - {t: BT, h: '1', s: BT}
-  - {t: BT, h: '2', s: BT}
-  - {t: BT, h: '3', s: BT}
-  - {t: BT, h: '4', s: BT}
+  - 🛜1
+  - 🛜2
+  - 🛜3
+  - 🛜4
+  - 🛜5
   - {type: held}
   - ''
   - ''
@@ -239,10 +239,10 @@ layers:
   - F6
   - ''
   - ''
-  - RGUI
-  - RALT
-  - RCTRL
-  - RSHFT
+  - ⌘
+  - ⌥
+  - ⌃
+  - ⇧
   - F10
   - F1
   - F2
@@ -254,17 +254,17 @@ layers:
   - ''
   - ''
   - APP
-  - SPACE
-  - TAB
+  - ⎵
+  - ⇥
   - ''
   - ''
   - {type: held}
 combos:
 - p: [13, 16]
-  k: '&caps_word'
+  k: 🔠
   l: [default]
 - p: [32, 33]
-  k: '&dot_space_shift'
+  k: .⎵⇧
   l: [default]
 - p: [4, 3]
   k: _
@@ -309,10 +309,10 @@ combos:
   k: ']'
   l: [default]
 - p: [21, 22]
-  k: ESC
+  k: ⎋
   l: [default]
 - p: [27, 28]
-  k: RET
+  k: ⏎
   l: [default]
 - p: [20, 21]
   k: '~'
