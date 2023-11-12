@@ -264,7 +264,7 @@ combos:
   k: $$mdi:alpha-w-box$$
   l: [default]
 - p: [32, 33]
-  k: .⎵
+  k: .⎵⇧
   l: [default]
 - p: [4, 3]
   k: _
