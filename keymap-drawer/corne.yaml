@@ -261,7 +261,7 @@ layers:
   - {type: held}
 combos:
 - p: [13, 16]
-  k: 🔠
+  k: $$mdi:alpha-w-box$$
   l: [default]
 - p: [32, 33]
   k: .⎵⇧
