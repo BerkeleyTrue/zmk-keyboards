@@ -1,0 +1,322 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
+layers:
+  default:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - {t: A, h: LSHFT}
+  - {t: S, h: LCTRL}
+  - {t: D, h: LALT}
+  - {t: F, h: LGUI}
+  - G
+  - H
+  - {t: J, h: RGUI}
+  - {t: K, h: RALT}
+  - {t: L, h: RCTRL}
+  - {t: '''', h: RSHFT}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: ;}
+  - {t: ., s: ':'}
+  - /
+  - {t: TAB, h: media}
+  - {t: DEL, h: symbol}
+  - {t: ESC, h: mouse}
+  - {t: SPACE, h: navigation}
+  - {t: BSPC, h: number}
+  - {t: RET, h: function}
+  number:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '7'
+  - '8'
+  - '9'
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - '0'
+  - '4'
+  - '5'
+  - '6'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '1'
+  - '2'
+  - '3'
+  - ''
+  - RET
+  - BSPC
+  - SPACE
+  - ''
+  - {type: held}
+  - ''
+  symbol:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&'
+  - '*'
+  - ''
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - $
+  - '%'
+  - ^
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '!'
+  - '@'
+  - '#'
+  - ''
+  - ''
+  - {type: held}
+  - ''
+  - SPACE
+  - BSPC
+  - RET
+  navigation:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - REDO
+  - PASTE
+  - COPY
+  - CUT
+  - UNDO
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - INS
+  - RET
+  - BSPC
+  - SPACE
+  - {type: held}
+  - ''
+  - ''
+  mouse:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - REDO
+  - PASTE
+  - COPY
+  - CUT
+  - UNDO
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - LEFT
+  - DOWN
+  - UP
+  - RIGHT
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - HOME
+  - PG DN
+  - PG UP
+  - END
+  - INS
+  - ''
+  - ''
+  - {type: held}
+  - SPACE
+  - BSPC
+  - RET
+  media:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - LSHFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - OUT TOG
+  - PREV
+  - VOL DN
+  - VOL UP
+  - NEXT
+  - ''
+  - ''
+  - ''
+  - BT CLR
+  - ''
+  - {t: BT, h: '0', s: BT}
+  - {t: BT, h: '1', s: BT}
+  - {t: BT, h: '2', s: BT}
+  - {t: BT, h: '3', s: BT}
+  - {t: BT, h: '4', s: BT}
+  - {type: held}
+  - ''
+  - ''
+  - STOP2
+  - PP
+  - MUTE
+  function:
+  - F12
+  - F7
+  - F8
+  - F9
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - F11
+  - F4
+  - F5
+  - F6
+  - ''
+  - ''
+  - RGUI
+  - RALT
+  - RCTRL
+  - RSHFT
+  - F10
+  - F1
+  - F2
+  - F3
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - APP
+  - SPACE
+  - TAB
+  - ''
+  - ''
+  - {type: held}
+combos:
+- p: [13, 16]
+  k: '&caps_word'
+  l: [default]
+- p: [32, 33]
+  k: '&dot_space_shift'
+  l: [default]
+- p: [4, 3]
+  k: _
+  l: [default]
+- p: [14, 13]
+  k: +
+  l: [default]
+- p: [23, 24]
+  k: '|'
+  l: [default]
+- p: [5, 6]
+  k: '-'
+  l: [default]
+- p: [15, 16]
+  k: '='
+  l: [default]
+- p: [25, 26]
+  k: \
+  l: [default]
+- p: [2, 3]
+  k: '{'
+  l: [default]
+- p: [1, 2]
+  k: <
+  l: [default]
+- p: [11, 12]
+  k: '['
+  l: [default]
+- p: [12, 13]
+  k: (
+  l: [default]
+- p: [6, 7]
+  k: '}'
+  l: [default]
+- p: [7, 8]
+  k: '>'
+  l: [default]
+- p: [16, 17]
+  k: )
+  l: [default]
+- p: [17, 18]
+  k: ']'
+  l: [default]
+- p: [21, 22]
+  k: ESC
+  l: [default]
+- p: [27, 28]
+  k: RET
+  l: [default]
+- p: [20, 21]
+  k: '~'
+  l: [default]
+- p: [28, 29]
+  k: '`'
+  l: [default]
