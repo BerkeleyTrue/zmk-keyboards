@@ -33,10 +33,10 @@ layers:
   - /
   - {t: '$$mdi:keyboard-tab$$', h: media}
   - {t: '$$mdi:repeat-variant$$', h: '$$mdi:symbol$$'}
-  - {t: '$$mdi:keyboard-esc$$', h: mouse}
-  - {t: '$$mdi:keyboard-space$$', h: navigation}
-  - {t: '$$mdi:backspace$$', h: number}
-  - {t: '$$mdi:keyboard-return$$', h: function}
+  - {t: '$$mdi:keyboard-esc$$', h: '$$mdi:mouse$$'}
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:navigation-variant-outline$$'}
+  - {t: '$$mdi:backspace-outline$$', h: '$$mdi:numeric$$'}
+  - {t: '$$mdi:keyboard-return$$', h: '$$mdi:function-variant$$'}
   number:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -72,7 +72,7 @@ layers:
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   symbol:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -145,7 +145,7 @@ layers:
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:keyboard-space$$
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   mouse:
@@ -181,7 +181,7 @@ layers:
   - INS
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', type: backspace}
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -258,13 +258,13 @@ layers:
   - $$mdi:keyboard-tab$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
 combos:
 - p: [13, 16]
   k: $$mdi:alpha-w-box$$
   l: [default]
 - p: [32, 33]
-  k: .⎵$$mdi:gesture-tap-hold$$
+  k: .⎵
   l: [default]
 - p: [4, 3]
   k: _
