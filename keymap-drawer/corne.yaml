@@ -32,7 +32,7 @@ layers:
   - {t: ., s: ':'}
   - /
   - {t: ⇥, h: media}
-  - {t: ⌦, h: symbol}
+  - {t: '&key_repeat', h: symbol}
   - {t: ⎋, h: mouse}
   - {t: ⎵, h: navigation}
   - {t: ⌫, h: number}
