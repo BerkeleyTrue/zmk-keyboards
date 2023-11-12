@@ -32,7 +32,7 @@ layers:
   - {t: ., s: ':'}
   - /
   - {t: '$$mdi:keyboard-tab$$', h: media}
-  - {t: '&key_repeat', h: symbol}
+  - {t: '$$mdi:repeat-variant$$', h: '$$mdi:symbol$$'}
   - {t: '$$mdi:keyboard-esc$$', h: mouse}
   - {t: '$$mdi:keyboard-space$$', h: navigation}
   - {t: '$$mdi:backspace$$', h: number}
@@ -106,7 +106,7 @@ layers:
   - '#'
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - {type: held}
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $$mdi:keyboard-space$$
   - {t: '$$mdi:backspace$$', type: backspace}
@@ -202,10 +202,10 @@ layers:
   - $$mdi:apple-keyboard-command$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
-  - PREV
-  - VOL DN
-  - VOL UP
-  - NEXT
+  - $$mdi:skip-previous$$
+  - $$mdi:volume-low$$
+  - $$mdi:volume-high$$
+  - $$mdi:skip-next$$
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
@@ -219,9 +219,9 @@ layers:
   - {type: held}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - STOP2
-  - PP
-  - MUTE
+  - $$mdi:stop-circle-outline$$
+  - $$mdi:play-pause$$
+  - $$mdi:volume-off$$
   function:
   - F12
   - F7
