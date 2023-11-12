@@ -11,16 +11,16 @@ layers:
   - I
   - O
   - P
-  - {t: A, h: ⇧}
-  - {t: S, h: ⌃}
-  - {t: D, h: ⌥}
-  - {t: F, h: ⌘}
+  - {t: A, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: F, h: LGUI}
   - G
   - H
-  - {t: J, h: ⌘}
-  - {t: K, h: ⌥}
-  - {t: L, h: ⌃}
-  - {t: '''', h: ⇧}
+  - {t: J, h: RGUI}
+  - {t: K, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: L, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: '''', h: '$$mdi:apple-keyboard-shift$$'}
   - Z
   - X
   - C
@@ -31,233 +31,233 @@ layers:
   - {t: ',', s: ;}
   - {t: ., s: ':'}
   - /
-  - {t: ⇥, h: media}
+  - {t: '$$mdi:keyboard-tab$$', h: media}
   - {t: '&key_repeat', h: symbol}
-  - {t: ⎋, h: mouse}
-  - {t: ⎵, h: navigation}
-  - {t: ⌫, h: number}
-  - {t: ⏎, h: function}
+  - {t: '$$mdi:keyboard-esc$$', h: mouse}
+  - {t: '$$mdi:keyboard-space$$', h: navigation}
+  - {t: '$$mdi:backspace$$', h: number}
+  - {t: RET, h: function}
   number:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '7'
   - '8'
   - '9'
-  - ''
-  - ⇧
-  - ⌃
-  - ⌥
-  - ⌘
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '0'
   - '4'
   - '5'
   - '6'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '1'
   - '2'
   - '3'
-  - ''
-  - ⏎
-  - ⌫
-  - ⎵
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - RET
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   symbol:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '&'
   - '*'
-  - ''
-  - ''
-  - ⇧
-  - ⌃
-  - ⌥
-  - ⌘
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - $
   - '%'
   - ^
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - '!'
   - '@'
   - '#'
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
-  - ''
-  - ⎵
-  - ⌫
-  - ⏎
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - RET
   navigation:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - REDO
   - PASTE
   - COPY
   - CUT
   - ↩️
-  - ⇧
-  - ⌃
-  - ⌥
-  - ⌘
-  - ''
-  - ←
-  - ↓
-  - ↑
-  - →
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ⇱
-  - ⇟
-  - ⇞
-  - ⇲
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - HOME
+  - PG DN
+  - PG UP
+  - END
   - INS
-  - ⏎
-  - ⌫
-  - ⎵
+  - RET
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:keyboard-space$$
   - {type: held}
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   mouse:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - REDO
   - PASTE
   - COPY
   - CUT
   - ↩️
-  - ⇧
-  - ⌃
-  - ⌥
-  - ⌘
-  - ''
-  - ←
-  - ↓
-  - ↑
-  - →
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ⇱
-  - ⇟
-  - ⇞
-  - ⇲
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-right-bold$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - HOME
+  - PG DN
+  - PG UP
+  - END
   - INS
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
-  - ⎵
-  - ⌫
-  - ⏎
+  - $$mdi:keyboard-space$$
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - RET
   media:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ⇧
-  - ⌃
-  - ⌥
-  - ⌘
-  - ''
-  - OUT TOG
-  - ⏮️
-  - 🔉
-  - 🔊
-  - ⏭️
-  - ''
-  - ''
-  - ''
-  - 📶❌
-  - ''
-  - 📶1
-  - 📶2
-  - 📶3
-  - 📶4
-  - 📶5
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - $$mdi:apple-keyboard-shift$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-option$$
+  - LGUI
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$'}
+  - PREV
+  - VOL DN
+  - VOL UP
+  - NEXT
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {h: '$$mdia:close-box-outline$$', s: '$$mdi:bluetooth-connect$$'}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {h: '0'}
+  - {h: '1'}
+  - {h: '2'}
+  - {h: '3'}
+  - {h: '4'}
   - {type: held}
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - STOP2
-  - ⏯️
-  - 🔇
+  - PP
+  - MUTE
   function:
   - F12
   - F7
   - F8
   - F9
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - F11
   - F4
   - F5
   - F6
-  - ''
-  - ''
-  - ⌘
-  - ⌥
-  - ⌃
-  - ⇧
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - RGUI
+  - $$mdi:apple-keyboard-option$$
+  - $$mdi:apple-keyboard-control$$
+  - $$mdi:apple-keyboard-shift$$
   - F10
   - F1
   - F2
   - F3
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - APP
-  - ⎵
-  - ⇥
-  - ''
-  - ''
+  - $$mdi:keyboard-space$$
+  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
+  - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {type: held}
 combos:
 - p: [13, 16]
@@ -309,10 +309,10 @@ combos:
   k: ']'
   l: [default]
 - p: [21, 22]
-  k: ⎋
+  k: $$mdi:keyboard-esc$$
   l: [default]
 - p: [27, 28]
-  k: ⏎
+  k: RET
   l: [default]
 - p: [20, 21]
   k: '~'
