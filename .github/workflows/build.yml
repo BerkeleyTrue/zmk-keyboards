@@ -2,6 +2,14 @@ on:
   push:
     branches:
       - master
+    paths:
+      - "config/*.keymap"
+      - "config/**/*.dtsi"
+      - "config/**/*.h"
+      - "config/**/*.conf"
+      - "config/**/*.yml"
+      - "west.yml"
+      - "build.yaml"
   pull_request:
     branches:
       - master
