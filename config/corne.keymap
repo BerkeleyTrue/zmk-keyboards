@@ -19,7 +19,7 @@
 
 // Layer switching
 #define PRMRTHMB  &lt NUM   BSPC
-#define PRMLTHMB  &lt SYM   DEL
+#define PRMLTHMB  &lt SYM   &key_repeat
 #define TERRTHMB  &lt NAV   SPACE
 #define TERLTHMB  &lt MOUSE ESC
 #define SECLTHMB  &lt MEDIA TAB

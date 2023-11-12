@@ -149,6 +149,7 @@ parse_config:
     '&sys_reset': "🔄"
     '&reset_td': "🔄"
     '&dot_space_shift': ".⎵⇧"
+    '&key_repeat': "🔁"
     '&btsc_0': 🛜1
     '&btsc_1': 🛜2
     '&btsc_2': 🛜3
