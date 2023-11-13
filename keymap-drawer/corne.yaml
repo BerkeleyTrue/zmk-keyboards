@@ -117,11 +117,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - REDO
-  - PASTE
-  - COPY
-  - CUT
-  - ↩️
+  - $$mdi:redo$$
+  - $$mdi:content-paste$$
+  - $$mdi:content-copy$$
+  - $$mdi:content-cut$$
+  - $$mdi:undo-variant$$
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
@@ -154,11 +154,11 @@ layers:
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
   - {t: '$$mdi:minus-circle-outline$$', type: none}
-  - REDO
-  - PASTE
-  - COPY
-  - CUT
-  - ↩️
+  - $$mdi:redo$$
+  - $$mdi:content-paste$$
+  - $$mdi:content-copy$$
+  - $$mdi:content-cut$$
+  - $$mdi:undo-variant$$
   - $$mdi:apple-keyboard-shift$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$

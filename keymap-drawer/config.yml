@@ -459,7 +459,6 @@ parse_config:
     LC(T): "⌃T"
     LC(TAB): "⌃⇥"
     LS(LC(TAB)): "⇧⌃⇥"
-    K_UNDO: "↩️"
 
     # Arrows
     UP: $$mdi:arrow-up-bold$$
@@ -502,4 +501,10 @@ parse_config:
     # Bluetooth
     BT_CLR: $$mdi:bluetooth-off$$
     BT_SEL: $$mdi:bluetooth-connect$$
+    K_REDO: $$mdi:redo$$
+    K_PASTE: $$mdi:content-paste$$
+    K_COPY: $$mdi:content-copy$$
+    K_CUT: $$mdi:content-cut$$
+    K_UNDO: $$mdi:undo-variant$$
+
   zmk_combos: {}
