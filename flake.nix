@@ -29,6 +29,7 @@
       systems = ["x86_64-linux"];
       imports = [
         inputs.boulder.flakeModule
+        ./nix/zmk.nix
       ];
       perSystem = {
         pkgs,
@@ -62,7 +63,6 @@
           echo "Watching for changes in keymap-drawer/corne.yaml"
           echo -e "./keymap-drawer/corne.yaml\n./keymap-drawer/config.yml" | ${pkgs.entr}/bin/entr ${gen-keymap-img}/bin/gen-keymap-img
         '';
-
       in {
         formatter = pkgs.alejandra;
         boulder = {
@@ -78,13 +78,17 @@
           name = "zmk-keyboards";
           inputsFrom = [
             config.boulder.devShell
+            config.devShells.zmk
           ];
           packages = with pkgs; [
-            python311Packages.west
             keymap-drawer
             gen-keymap-img
             nodePackages.serve
             watch-keymap-drawer
+            config.packages.buildright
+            config.packages.buildreset
+            config.packages.init
+            config.packages.update
           ];
         };
       };
