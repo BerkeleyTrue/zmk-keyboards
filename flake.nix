@@ -54,10 +54,15 @@
         };
 
         gen-keymap-img = pkgs.writeShellScriptBin "gen-keymap-img" ''
-          #!${pkgs.stdenv.shell}
           ${keymap-drawer}/bin/keymap -c keymap-drawer/config.yml parse -z config/corne.keymap > keymap-drawer/corne.yaml
           ${keymap-drawer}/bin/keymap -c keymap-drawer/config.yml draw keymap-drawer/corne.yaml > keymap-drawer/corne.svg
         '';
+
+        watch-keymap-drawer = pkgs.writeShellScriptBin "watch-keymap-drawer" ''
+          echo "Watching for changes in keymap-drawer/corne.yaml"
+          echo -e "./keymap-drawer/corne.yaml\n./keymap-drawer/config.yml" | ${pkgs.entr}/bin/entr ${gen-keymap-img}/bin/gen-keymap-img
+        '';
+
       in {
         formatter = pkgs.alejandra;
         boulder = {
@@ -78,6 +83,8 @@
             python311Packages.west
             keymap-drawer
             gen-keymap-img
+            nodePackages.serve
+            watch-keymap-drawer
           ];
         };
       };
