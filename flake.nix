@@ -72,23 +72,51 @@
               exec = gen-keymap-img;
               category = "documentation";
             }
+            {
+              description = "Watch keymap drawer";
+              exec = watch-keymap-drawer;
+              category = "documentation";
+            }
+            {
+              description = "Initialize zmk";
+              exec = config.zmk.init;
+              category = "development";
+            }
+            {
+              description = "Update zmk";
+              exec = config.zmk.update;
+              category = "development";
+            }
+            {
+              description = "Build zmk uf2 file";
+              exec = config.zmk.build;
+              category = "development";
+            }
+          ];
+        };
+        zmk = {
+          include = [
+            {
+              board = "nice_nano_v2";
+              shield = "corne_left nice_view_adapter nice_view";
+            }
+            {
+              board = "nice_nano_v2";
+              shield = "corne_right nice_view_adapter nice_view";
+            }
           ];
         };
         devShells.default = pkgs.mkShell {
           name = "zmk-keyboards";
           inputsFrom = [
             config.boulder.devShell
-            config.devShells.zmk
+            config.zmk.devShell
           ];
           packages = with pkgs; [
             keymap-drawer
             gen-keymap-img
             nodePackages.serve
             watch-keymap-drawer
-            config.packages.buildright
-            config.packages.buildreset
-            config.packages.init
-            config.packages.update
           ];
         };
       };
