@@ -25,6 +25,15 @@
 
 #define GLOBAL_QUICK_TAP_MS 175
 
+// ## configure behaviors
+&sk {
+  quick-release;
+}
+
+// ## new behaviors
+
+// ### timerless home row mods
+// see https://github.com/urob/zmk-config#timeless-homerow-mods
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
   ZMK_BEHAVIOR(NAME, hold_tap, \
     flavor = "balanced"; \
@@ -39,9 +48,12 @@
 MAKE_HRM(hml, &kp, &kp, LEFT_KEYS THUMB_KEYS)    // left-hand HRMs
 MAKE_HRM(hmr, &kp, &kp, RIGHT_KEYS THUMB_KEYS)  // right-hand HRMs
 
+// ### bluetooth select/clear
+
 // Make a BlueTooth Select/Clear morph
 // tap = select,
 // shift + tap = select and clear
+// not sure why these are not working...
 #define MAKE_BTSC(NAME, SEL) \
   ZMK_BEHAVIOR(NAME, mod_morph, \
     bindings = <&bt BT_SEL SEL>, <&bt BT_SEL SEL &bt BT_CLR>; \
@@ -54,6 +66,8 @@ MAKE_BTSC(btsc_2, 2) // etc...
 MAKE_BTSC(btsc_3, 3)
 MAKE_BTSC(btsc_4, 4)
 
+// ### new shift morphs
+
 // Tap for comma, shift + tap for semicolon
 ZMK_BEHAVIOR(cma_smi, mod_morph, \
   bindings = <&kp COMMA>, <&kp SEMI>; \
@@ -64,6 +78,8 @@ ZMK_BEHAVIOR(dot_cln, mod_morph, \
   bindings = <&kp DOT>, <&kp COLON>; \
   mods = <(MOD_LSFT)>; \
 )
+
+// ### layer toggles
 
 // layer toggle/repeat
 // hold = toggle to layer
@@ -76,4 +92,14 @@ ZMK_BEHAVIOR(ltr, hold_tap, \
   tapping-term-ms = <280>; \
   quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
   bindings = <&mo>, <&key_repeat>; \
+)
+
+// layer toggle/ sticky key
+// hold = toggle to layer
+// tap = sticky key
+ZMK_BEHAVIOR(ltsk, hold_tap, \
+  flavor = "balanced"; \
+  tapping-term-ms = <280>; \
+  quick-tap-ms = <GLOBAL_QUICK_TAP_MS>; \
+  bindings = <&mo>, <&sk>; \
 )

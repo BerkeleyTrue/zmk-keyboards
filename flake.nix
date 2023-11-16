@@ -77,21 +77,21 @@
               exec = watch-keymap-drawer;
               category = "documentation";
             }
-            {
-              description = "Initialize zmk";
-              exec = config.zmk.init;
-              category = "development";
-            }
-            {
-              description = "Update zmk";
-              exec = config.zmk.update;
-              category = "development";
-            }
-            {
-              description = "Build zmk uf2 file";
-              exec = config.zmk.build;
-              category = "development";
-            }
+            # {
+            #   description = "Initialize zmk";
+            #   exec = config.zmk.init;
+            #   category = "development";
+            # }
+            # {
+            #   description = "Update zmk";
+            #   exec = config.zmk.update;
+            #   category = "development";
+            # }
+            # {
+            #   description = "Build zmk uf2 file";
+            #   exec = config.zmk.build;
+            #   category = "development";
+            # }
           ];
         };
         zmk = {

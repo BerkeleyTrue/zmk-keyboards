@@ -18,12 +18,12 @@
 #include "includes/behaviors.dtsi"
 
 // Layer switching
-#define PRMRTHMB  &lt  NUM   BSPC
-#define PRMLTHMB  &ltr SYM   0
-#define TERRTHMB  &lt  NAV   SPACE
-#define TERLTHMB  &lt  MOUSE ESC
-#define SECLTHMB  &lt  MEDIA TAB
-#define SECRTHMB  &lt  FUN   RET
+#define PRMRTHMB  &lt    NUM   BSPC
+#define PRMLTHMB  &ltr   SYM   0      // zero here because key-repeat does not take arguments
+#define TERRTHMB  &lt    NAV   SPACE
+#define TERLTHMB  &ltsk  MOUSE LSHFT // tap gives you sticky shift
+#define SECLTHMB  &lt    MEDIA TAB
+#define SECRTHMB  &lt    FUN   RET
 
 // shorter codes
 #define BPSTE    &kp  K_PASTE
