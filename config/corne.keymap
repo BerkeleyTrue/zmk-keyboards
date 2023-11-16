@@ -109,8 +109,8 @@
     navigation_layer { // layer 3 (navigation)
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    _x_       _x_       _x_       _x_       _x_           BREDO     BPSTE     BCPY      BCUT      BUNDO
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │   CUT   │  COPY   │  PASTE  │  UNDO   │
+    _x_       _x_       _x_       _x_       _x_           BREDO     BCUT      BCPY        BPSTE     BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │  LEFT   │  DOWN   │    UP   │  RIGHT  │   NOP   │
     &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT _x_
@@ -126,8 +126,8 @@
     mouse_layer { // layer 4 (mouse) | zmk currently does not support mouse keys, so this is a duplicate of navigation layer
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │  PASTE  │  COPY   │   CUT   │  UNDO   │
-    _x_       _x_       _x_       _x_       _x_           BREDO     BPSTE     BCPY      BCUT      BUNDO
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │   CUT   │  COPY   │  PASTE  │  UNDO   │
+    _x_       _x_       _x_       _x_       _x_           BREDO     BCUT      BCPY        BPSTE   BUNDO
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
 // │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │  LEFT   │  DOWN   │    UP   │  RIGHT  │   NOP   │
     &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT _x_
