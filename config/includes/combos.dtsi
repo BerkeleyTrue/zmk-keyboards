@@ -110,3 +110,14 @@ ZMK_COMBO(ent, &kp RET, RB2 RB3, DEF)
 
 ZMK_COMBO(tilde, &kp TILDE, LB4 LB3, DEF)
 ZMK_COMBO(grave, &kp GRAVE, RB3 RB4, DEF)
+
+
+/*
+  ╭─────────────────────────┬─────────────────────────╮
+  │ LT4 LT3 LT2 LT1 LT0     │     RT0 RT1 RT2 RT3 RT4 │
+  │ LM4 LM3 LM2 LM1 LM0     │     RM0 RM1 RM2 RM3 RM4 │
+  │ LB4 LB3 LB2 LB1 ------<the>------ RB1 RB2 RB3 RB4 │
+  ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯
+*/
+ZMK_COMBO(the, &the, LB0 RB0, DEF)
