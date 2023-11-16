@@ -28,7 +28,7 @@
 // ## configure behaviors
 &sk {
   quick-release;
-}
+};
 
 // ## new behaviors
 
