@@ -24,6 +24,9 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
+      - name: set now
+        run: echo "NOW=$(date +'%Y.%m.%d.%H.%M')" >> $GITHUB_ENV
+
       - name: Download Artifacts
         uses: actions/download-artifact@v3
         with:
@@ -35,5 +38,5 @@ jobs:
         with:
           file: firmware/*.uf2
           file_glob: true
-          tag: ${{ github.ref }}
+          tag: ${{ env.NOW }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
