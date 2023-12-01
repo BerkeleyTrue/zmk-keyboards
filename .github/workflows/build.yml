@@ -20,3 +20,20 @@ name: Corne_ZMK_build
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: firmware
+          path: firmware
+
+      - name: Publish release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          file: firmware.zip
+          file_glob: true
+          tag: ${{ github.ref }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
