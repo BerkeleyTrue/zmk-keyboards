@@ -18,5 +18,23 @@
       tap-ms = <5>;
       bindings = <&macro_tap &kp T>, <&macro_release &kp LSHFT>, <&macro_tap &kp H &kp E &kp SPACE>;
     )
+
+    // 'and' macro
+    // holding the left shift, this will type 'And'
+    // otherwise, it will type 'and'
+    ZMK_MACRO(and,
+      wait-ms = <5>;
+      tap-ms = <5>;
+      bindings = <&macro_tap &kp A>, <&macro_release &kp LSHFT>, <&macro_tap &kp N &kp D &kp SPACE>;
+    )
+
+    // 'ing' macro
+    // holding the left shift, this will type 'Ing'
+    // otherwise, it will type 'ing'
+    ZMK_MACRO(ing,
+      wait-ms = <5>;
+      tap-ms = <5>;
+      bindings = <&macro_tap &kp I>, <&macro_release &kp LSHFT>, <&macro_tap &kp N &kp G &kp SPACE>;
+    )
   };
 };
