@@ -18,8 +18,8 @@
 #include "includes/behaviors.dtsi"
 
 // Layer switching
-#define PRMRTHMB  &lt    NUM   BSPC
-#define PRMLTHMB  &ltr   SYM   0      // zero here because key-repeat does not take arguments
+#define PRMRTHMB  &kp    BSPC
+#define PRMLTHMB  &ltr   NUM   0      // zero here because key-repeat does not take arguments
 #define TERRTHMB  &lt    NAV   SPACE
 #define TERLTHMB  &ltsk  MOUSE LSHFT // tap gives you sticky shift
 #define SECLTHMB  &lt    MEDIA TAB
@@ -74,39 +74,22 @@
     number_layer { // layer 1 (numbers)
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │    7    │    8    │    9    │   NOP   │
-    _x_       _x_       _x_       _x_       _x_           _x_       &kp N7    &kp N8    &kp N9    _x_
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │
+    _x_       _x_       _x_       _x_       _x_           _x_       _x_       _x_       _x_       _x_
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │  SHIFT  │  CTRL   │   ALT   │   GUI   │   NOP   │   │   ZERO  │    4    │    5    │    6    │   NOP   │
-    &kp LSHFT &kp LCTRL &kp LALT  &kp LGUI  _x_           &kp N0    &kp N4    &kp N5    &kp N6    _x_
+// │    1    │    2    │    3    │    4    │    5    │   │     6   │    7    │    8    │    9    │    0    │
+    HRML(N1,     N2,       N3,       N4)    &kp N5        &kp N6    HRMR(N7,     N8,       N9,       N0)
 // ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   NOP   │    1    │    2    │    3    │   NOP   │   │   NOP   │    1    │    2    │    3    │   NOP   │
-    _x_       _x_       _x_       _x_       _x_           _x_       &kp N1    &kp N2    &kp N3    _x_
-// ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │  ENTER  │  BCKSPC │  SPACE  │   │   NOP   │   NOP   │   NOP   │
-                        &kp RET   &kp BSPC  &kp SPACE     _x_       ___       _x_
-//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
-      >;
-    };
-
-    symbol_layer { // layer 2 (symbols)
-      bindings = <
-// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │    &    │    *    │   NOP   │   NOP   │
-    _x_       _x_       _x_       _x_       _x_           _x_       &kp AMPS  &kp STAR  _x_       _x_
-// ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │  SHIFT  │   CTRL  │   ALT   │   GUI   │    +    │   │   NOP   │    $    │    %    │    ^    │   NOP   │
-    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           _x_       &kp DLLR  &kp PRCNT &kp CARET _x_
-// ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │    !    │    @    │    #    │   NOP   │
-    _x_       _x_       _x_       _x_       _x_           _x_       &kp EXCL  &kp AT    &kp HASH  _x_
+// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   NOP   │   NOP   │   NOP   │   ./:   │   NOP   │
+       _x_       _x_       _x_       _x_       _x_           _x_       _x_       _x_    &dot_cln     _x_
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │   NOP   │   NOP   │   NOP   │   │  SPACE  │   NOP   │  ENTER  │
                         _x_       ___       _x_           &kp SPACE &kp BSPC  &kp RET
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
-    navigation_layer { // layer 3 (navigation)
+
+    navigation_layer { // layer 2 (navigation)
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │   CUT   │  COPY   │  PASTE  │  UNDO   │
@@ -123,7 +106,7 @@
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
-    mouse_layer { // layer 4 (mouse) | zmk currently does not support mouse keys, so this is a duplicate of navigation layer
+    mouse_layer { // layer 3 (mouse) | zmk currently does not support mouse keys, so this is a duplicate of navigation layer
       bindings = <
 // ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
 // │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │   CUT   │  COPY   │  PASTE  │  UNDO   │
