@@ -121,3 +121,20 @@ ZMK_COMBO(grave, &kp GRAVE, RB3 RB4, DEF)
               ╰─────────────┴─────────────╯
 */
 ZMK_COMBO(the, &the, LB0 RB0, DEF)
+
+/*
+  ╭──────────────┬───┬──────┬─────────────────────────╮
+  │ LT4 LT3 LT2  #   ^      │      $   *  RT2 RT3 RT4 │
+  │ LM4 LM3 LM2  ┼   ┼      │      ┼   ┼  RM2 RM3 RM4 │
+  │ LB4 LB3 LB2  %   @      │      !   &  RB2 RB3 RB4 │
+  ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
+              ╰─────────────┴─────────────╯
+*/
+ZMK_COMBO(hash,  &kp HASH,  LT1 LM1, DEF)
+ZMK_COMBO(caret, &kp CARET, LT0 LM0, DEF)
+ZMK_COMBO(prcnt, &kp PRCNT, LM1 LB1, DEF)
+ZMK_COMBO(at,    &kp AT,    LM0 LB0, DEF)
+
+ZMK_COMBO(dllr, &kp DLLR, RM0 RT0, DEF)
+ZMK_COMBO(star, &kp STAR, RM1 RT1, DEF)
+ZMK_COMBO(excl, &kp EXCL, RM0 RB0, DEF)
