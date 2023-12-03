@@ -16,7 +16,7 @@
     ZMK_MACRO(the,
       wait-ms = <5>;
       tap-ms = <5>;
-      bindings = <&macro_tap &kp T>, <&macro_release &kp LSHFT>, <&macro_tap &kp H &kp E &kp SPACE>;
+      bindings = <&macro_tap &kp T>, <&macro_release &kp LSHFT>, <&macro_tap &kp H &kp E>;
     )
 
     // 'and' macro
