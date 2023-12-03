@@ -6,24 +6,30 @@
 // layers
 #define DEF     0
 #define NUM     1
-#define SYM     2
-#define NAV     3
-#define MOUSE   4
-#define MEDIA   5
-#define FUN     6
+#define NAV     2
+#define MEDIA   3
+#define FUN     4
 
 #include "keys/36.h"
 #include "includes/macros.dtsi"
 #include "includes/combos.dtsi"
 #include "includes/behaviors.dtsi"
 
+// ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
+//                     │SEC THMB │PRM THMB │TER THMB │   │TER THMB │PRM THMB │SEC THMB │
+//                     │   MED   │  NUM    │ LSHIFT  │   │  NAV    │CTRL+DEL │  FUN    │
+//                     │   Tab   │ REPEAT  │ SK SHFT │   │  SPACE  │  DEL    │ SK CTRL │
+//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
+//                                           ╰caps_word on double tap, not sure if I like it yet
+
 // Layer switching
-#define PRMRTHMB  &kp    BSPC
-#define PRMLTHMB  &ltr   NUM   0      // zero here because key-repeat does not take arguments
-#define TERRTHMB  &lt    NAV   SPACE
-#define TERLTHMB  &ltsk  MOUSE LSHFT // tap gives you sticky shift
-#define SECLTHMB  &lt    MEDIA TAB
-#define SECRTHMB  &lt    FUN   RET
+#define SECLTHMB  &lt    MEDIA    TAB
+#define PRMLTHMB  &ltr   NUM      0      // zero here because key-repeat does not take arguments
+#define TERLTHMB  &smart_shift
+
+#define TERRTHMB  &lt    NAV      SPACE
+#define PRMRTHMB  &mt    RC(BSPC) BSPC // tap gives you backspace : long tap gives you delete word
+#define SECRTHMB  &ltsk  FUN      RCTRL // tap for sticky ctrl : hold for function layer
 
 // shorter codes
 #define BPSTE    &kp  K_PASTE
@@ -103,23 +109,6 @@
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │  ENTER  │  BCKSPC │  SPACE  │   │   NOP   │   NOP   │   NOP   │
                         &kp RET   &kp BSPC  &kp SPACE     ___       _x_       _x_
-//                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
-      >;
-    };
-    mouse_layer { // layer 3 (mouse) | zmk currently does not support mouse keys, so this is a duplicate of navigation layer
-      bindings = <
-// ╭─────────────────────────────────────────────────╮   ╭─────────────────────────────────────────────────╮
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │   REDO  │   CUT   │  COPY   │  PASTE  │  UNDO   │
-    _x_       _x_       _x_       _x_       _x_           BREDO     BCUT      BCPY        BPSTE   BUNDO
-// ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │ SHIFT   │  CTRL   │   ALT   │   SUPER │   NOP   │   │  LEFT   │  DOWN   │    UP   │  RIGHT  │   NOP   │
-    &kp LSHFT &kp LCTRL  &kp LALT &kp LGUI  _x_           &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT _x_
-// ├─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────┤
-// │   NOP   │   NOP   │   NOP   │   NOP   │   NOP   │   │  HOME   │  PGDN   │   PGUP  │   END   │  INSERT │
-    _x_       _x_       _x_       _x_       _x_           &kp HOME  &kp PG_DN &kp PG_UP  &kp END  &kp INS
-// ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
-//                     │   NOP   │   NOP   │   NOP   │   │   RET   │ BCKSPC  │  ENTER  │
-                        _x_       _x_       ___           &kp SPACE &kp BSPC  &kp RET
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
       >;
     };
