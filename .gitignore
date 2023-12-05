@@ -1,3 +1,5 @@
 .direnv
 zmk
 .west
+modules
+zephyr
