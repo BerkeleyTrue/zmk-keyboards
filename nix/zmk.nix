@@ -116,13 +116,12 @@ in {
                   runtimeInputs = buildInputs;
                   checkPhase = "";
                   text = ''
-                    echo "Building ${name}"
-                    pushd config
-                    node ../../../briefs/import-zmk.js ../../../briefs/briefs-canary.tsv
-                    popd
-                    source ./zephr/zephyr-env.sh
+                    echo "---<Building ${name}>---"
                     west build -s ./zmk/app -b ${board} -d build/${name} -- -DZMK_CONFIG=$PWD/${zmkConfig.config-dir} -DSHIELD=${shield}
-                    echo 'done'
+                    echo '---<done>---'
+                    echo '---<Copying to build/artifacts/${name}>---'
+                    mkdir -p build/artifacts
+                    cp build/${name}/zephyr/zmk.uf2 build/artifacts/${name}.uf2
                   '';
                 };
               };
@@ -175,15 +174,31 @@ in {
               This will iterate through all the keyboards in zmk.include and build them.
             '';
           };
+
+          cleanup = mkOption {
+            type = types.package;
+            readOnly = true;
+            description = ''
+              The cleanup script for zmk, it is included in zmk devshell
+              but exposed here for your convienence.
+
+              This will remove the build directory and zmk.
+            '';
+          };
         };
       };
 
       config = let
         matrix = zmkConfig.matrix;
 
+        cleanup = pkgs.writeShellScriptBin "cleanup" ''
+          rm -rf build
+          rm -rf zmk
+          rm -rf zephyr
+        '';
         init = pkgs.writeShellScriptBin "init" ''
           git clone https://github.com/zmkfirmware/zmk.git
-          west init -l config
+          west init -l ${zmkConfig.config-dir}
         '';
 
         update = pkgs.writeShellScriptBin "update" ''
@@ -201,12 +216,23 @@ in {
             mtxi = lib.attrValues matrix;
           in ''
             ${lib.concatStringsSep "\n" (map (x: ''
-              build_${x.name}() {
-                mkdir -p build/${x.name}
-                ${x.build}/bin/build_${x.name}
-              }
-            '') mtxi)}
-            opt=$(gum choose "all" ${lib.concatStringsSep " " (map (x: x.name) mtxi)})
+                build_${x.name}() {
+                  mkdir -p build/${x.name}
+                  ${x.build}/bin/build_${x.name}
+                }
+              '')
+              mtxi)}
+            if [ "$#" -eq 1 ]; then
+              if [ "$1" = "all" ]; then
+                opt="$1"
+              elif ! declare -F "build_$1" > /dev/null; then
+                echo "build_$1 does not exist" >&2
+                exit 1
+              fi
+              opt="$1"
+            else
+              opt=$(gum choose "all" ${lib.concatStringsSep " " (map (x: x.name) mtxi)})
+            fi
             if [ "$opt" = "all" ]; then
               ${lib.concatStringsSep "\n  " (map (x: "build_${x.name}") mtxi)}
             else
@@ -222,13 +248,17 @@ in {
               init
               update
               build-boards
+              cleanup
             ];
-          ZEPHYR_TOOLCHAIN_VARIANT = "gnuarmemb";
-          GNUARMEMB_TOOLCHAIN_PATH = pkgs.gcc-arm-embedded;
+          shellHook = ''
+            export ZEPHYR_TOOLCHAIN_VARIANT="gnuarmemb"
+            export GNUARMEMB_TOOLCHAIN_PATH=${pkgs.gcc-arm-embedded};
+          '';
         };
         zmk.init = init;
         zmk.update = update;
         zmk.build = build-boards;
+        zmk.cleanup = cleanup;
       };
     }
   );
