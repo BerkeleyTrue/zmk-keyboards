@@ -162,4 +162,4 @@ ZMK_COMBO(ampr, &kp AMPS, RB0 RM1, DEF)
 */
 // outputs ->
 // common for clojure threading and a pain to build with above combos
-ZMK_combo(thread, &thread, RT1 RT2 RT3, DEF)
+ZMK_COMBO(thread, &thread, RT1 RT2 RT3, DEF)
