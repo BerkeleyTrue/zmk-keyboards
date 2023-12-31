@@ -36,5 +36,12 @@
       tap-ms = <5>;
       bindings = <&macro_tap &kp I>, <&macro_release &kp LSHFT>, <&macro_tap &kp N &kp G &kp SPACE>;
     )
+
+    // '-->' macro (thread)
+    ZMK_MACRO(thread,
+      wait-ms = <5>;
+      tap-ms = <5>;
+      bindings = <&macro_tap &kp UNDERSCORE &kp GREATER_THAN>;
+    )
   };
 };
