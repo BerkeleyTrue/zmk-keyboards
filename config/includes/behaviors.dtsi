@@ -104,7 +104,7 @@ ZMK_BEHAVIOR(ltsk, hold_tap, \
   bindings = <&mo>, <&sk>; \
 )
 
-// urob's smart shift
+// urob's smart shift (not in use)
 // tap = sticky shift
 // hold = shift
 // shift + tap = caps word

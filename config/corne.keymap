@@ -18,18 +18,18 @@
 // ╰─────────┼─────────┼─────────┼─────────┼─────────┤   ├─────────┼─────────┼─────────┼─────────┼─────────╯
 //                     │SEC THMB │PRM THMB │TER THMB │   │TER THMB │PRM THMB │SEC THMB │
 //                     │   MED   │  NUM    │ LSHIFT  │   │  NAV    │CTRL+DEL │  FUN    │
-//                     │   Tab   │ REPEAT  │ SK SHFT │   │  SPACE  │  DEL    │ SK CTRL │
+//                     │ Sk SHFT │ REPEAT  │  Tab    │   │  SPACE  │  DEL    │ SK CTRL │
 //                     ╰─────────────────────────────╯   ╰─────────────────────────────╯
-//                                           ╰caps_word on double tap, not sure if I like it yet
+//                          ╰caps_word on double tap, not sure if I like it yet
 
 // Layer switching
-#define SECLTHMB  &lt    MEDIA    TAB
-#define PRMLTHMB  &ltr   NUM      0      // zero here because key-repeat does not take arguments
-#define TERLTHMB  &smart_shift
+#define SECLTHMB  &ltsk  MEDIA    LSHIFT  // tap for sticky shift : hold for media layer
+#define PRMLTHMB  &ltr   NUM      0      //  zero here because key-repeat does not take arguments
+#define TERLTHMB  &mt    LSHIFT   TAB   //   tap for tab : hold for shift
 
 #define TERRTHMB  &lt    NAV      SPACE
-#define PRMRTHMB  &mt    RC(BSPC) BSPC // tap gives you backspace : long tap gives you delete word
-#define SECRTHMB  &ltsk  FUN      RCTRL // tap for sticky ctrl : hold for function layer
+#define PRMRTHMB  &mt    RC(BSPC) BSPC   // tap gives you backspace : long tap gives you delete word
+#define SECRTHMB  &ltsk  FUN      RCTRL //  tap for sticky ctrl : hold for function layer
 
 // shorter codes
 #define BPSTE    &kp  K_PASTE
@@ -45,7 +45,7 @@
 #define BVOLD    &kp  K_VOL_DN
 #define BVOLU    &kp  K_VOL_UP
 #define OUTTOG   &out OUT_TOG // toggle keyboard output bluetooth/usb
-#define ___      &trans // transparent
+#define ___      &trans      //  transparent
 #define _x_      &none
 
 // Home row mods
