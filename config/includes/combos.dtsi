@@ -82,7 +82,9 @@ ZMK_COMBO(backslash_slash, &kp BACKSLASH, RB0 RB1, DEF)
               ╰─────────────┴─────────────╯
 */
     // {
-ZMK_COMBO(l_curly, &kp LBRC, LT2 LT1, DEF)
+    // use fast timeout here, since this is 're' and
+    // I end up triggering it accidently
+ZMK_COMBO(l_curly, &kp LBRC, LT2 LT1, DEF, COMBO_TERM_FAST)
     // <
 ZMK_COMBO(l_angle, &kp LESS_THAN, LT3 LT2, DEF)
     // [
