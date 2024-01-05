@@ -126,7 +126,7 @@ ZMK_COMBO(tilde, &kp TILDE, LB4 LB3, DEF)
 ZMK_COMBO(grave, &kp GRAVE, RB3 RB4, DEF)
 
 /*
-  ╭──────────────┬───┬──────┬─────────────────────────╮
+  ╭──────────────┬───┬──────┬──────┬──────────────────╮
   │ LT4 LT3 LT2  #   ^      │      $   *  RT2 RT3 RT4 │
   │ LM4 LM3 LM2  ┴   ┼      │      ┼   ┴  RM2 RM3 RM4 │
   │ LB4 LB3 LB2 LB1  @      │      !  RB1 RB2 RB3 RB4 │
@@ -160,6 +160,6 @@ ZMK_COMBO(ampr, &kp AMPS, RB0 RM1, DEF)
   ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
               ╰─────────────┴─────────────╯
 */
-// outputs ->
+// outputs -> or => on shift press
 // common for clojure threading and a pain to build with above combos
-ZMK_COMBO(thread, &thread, RT1 RT2 RT3, DEF)
+ZMK_COMBO(thread_arrow, &thread, RT1 RT2 RT3, DEF)

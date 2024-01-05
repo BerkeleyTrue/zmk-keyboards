@@ -112,3 +112,10 @@ ZMK_BEHAVIOR(smart_shift, mod_morph,
   bindings = <&sk LSHIFT>, <&caps_word>;
   mods = <(MOD_LSFT)>;
 )
+
+// thread on press (->)
+// arrow on shift + press (=>)
+ZMK_BEHAVIOR(thread_arrow, mod_morph,
+  bindings = <&thread>, <&arrow>;
+  mods = <(MOD_LSFT)>;
+)
