@@ -1,6 +1,7 @@
-#define COMBO_TERM_FAST 18
-#define COMBO_TERM_SLOW 50
-#define COMBO_PRIOR_IDLE 150
+#define COMBO_TERM_FAST   18
+#define COMBO_TERM_SLOW   50
+#define COMBO_TERM_SLOWER 100
+#define COMBO_PRIOR_IDLE  150
 
 
 // sourced from urob/zmk-node-free
@@ -112,8 +113,8 @@ ZMK_COMBO(r_square, &kp RBKT, RM2 RM3, DEF)
               ╰─────────────┴─────────────╯
 */
 
-ZMK_COMBO(esc, &kp ESC, LB3 LB2, DEF)
-ZMK_COMBO(ent, &kp RET, RB2 RB3, DEF)
+ZMK_COMBO(esc, &kp ESC, LB3 LB2, DEF, COMBO_TERM_SLOWER)
+ZMK_COMBO(ent, &kp RET, RB2 RB3, DEF, COMBO_TERM_SLOWER)
 
 /*
   ╭─────────────────────────┬─────────────────────────╮
