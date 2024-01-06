@@ -44,7 +44,9 @@ ZMK_COMBO(the, &the, LM0 RM0, DEF)
   ╰───────────╮ LH2 LH1 LH0 │ RH0 RH1 RH2 ╭───────────╯
               ╰─────────────┴─────────────╯
 */
-ZMK_COMBO(and,       &and,       LT1 RT1, DEF)
+// use fast timeout here, since I keep hitting this accidently
+// when typing clojure
+ZMK_COMBO(and,       &and,       LT1 RT1, DEF, COMBO_TERM_FAST)
 ZMK_COMBO(caps_word, &caps_word, LM1 RM1, DEF)
 
 /*
@@ -66,11 +68,11 @@ ZMK_COMBO(space_shift, &dot_space_shift, LH0 RH0, DEF)
               ╰─────────────┴─────────────╯
 */
 ZMK_COMBO(lodash, &kp UNDERSCORE, LT0 LT1, DEF)
-ZMK_COMBO(plus, &kp PLUS, LM0 LM1, DEF)
-ZMK_COMBO(pipe, &kp PIPE, LB1 LB0, DEF)
+ZMK_COMBO(plus,   &kp PLUS, LM0 LM1, DEF)
+ZMK_COMBO(pipe,   &kp PIPE, LB1 LB0, DEF)
 
-ZMK_COMBO(minus, &kp MINUS, RT0 RT1, DEF)
-ZMK_COMBO(equal, &kp EQUAL, RM0 RM1, DEF)
+ZMK_COMBO(minus,           &kp MINUS, RT0 RT1, DEF)
+ZMK_COMBO(equal,           &kp EQUAL, RM0 RM1, DEF)
 ZMK_COMBO(backslash_slash, &kp BACKSLASH, RB0 RB1, DEF)
 
 /*
@@ -150,7 +152,7 @@ ZMK_COMBO(star, &kp STAR, RM1 RT1, DEF)
               ╰─────────────┴─────────────╯
 */
 ZMK_COMBO(prcnt, &kp PRCNT, LM1 LB0, DEF)
-ZMK_COMBO(ampr, &kp AMPS, RB0 RM1, DEF)
+ZMK_COMBO(ampr,  &kp AMPS, RB0 RM1, DEF)
 
 /*
   ╭─────────────────────────┬─────────────────────────╮
