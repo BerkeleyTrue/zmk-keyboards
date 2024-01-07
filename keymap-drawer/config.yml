@@ -309,12 +309,15 @@ parse_config:
     '&sys_reset': "🔄"
     '&reset_td': "🔄"
     '&dot_space_shift': ".⎵⇧"
-    '&key_repeat': $$mdi:repeat-variant$$
-    "&ltr SYM 0":
-      tap: $$mdi:repeat-variant$$
-      hold: $$mdi:symbol$$
 
-    "&lt NUM BSPC":
+    "&ltsk MEDIA LSHIFT":
+      tap: SK(⇧)
+      hold: MEDIA
+    "&ltr NUM 0":
+      tap: $$mdi:repeat-variant$$
+      hold: $$mdi:numeric$$
+
+    "&ltsk NUM BSPC":
       tap: $$mdi:backspace-outline$$
       hold: $$mdi:numeric$$
 
@@ -366,6 +369,12 @@ parse_config:
       shifted: $$mdi:usb$$
       tap: $$mdi:toggle-switch$$
       hold: $$mdi:bluetooth$$
+
+    "&thread_arrow":
+      tap: ->
+      shifted: =>
+    "&and":
+      tap: and
 
   sticky_label: $$mdi:gesture-tap-hold$$
   trans_legend:
@@ -449,6 +458,7 @@ parse_config:
     RSHIFT: $$mdi:apple-keyboard-shift$$
     RSHFT: $$mdi:apple-keyboard-shift$$
     RGUI: $$mdi:apple-keyboard-command$$
+
     # "Meh" key
     LS(LC(LALT)): $$mdi:star-three-points$$
     LC(INS): "📄"
@@ -459,6 +469,7 @@ parse_config:
     LC(T): "⌃T"
     LC(TAB): "⌃⇥"
     LS(LC(TAB)): "⇧⌃⇥"
+    RC(BSPC): ^BSPC
 
     # Arrows
     UP: $$mdi:arrow-up-bold$$

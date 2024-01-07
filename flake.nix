@@ -54,6 +54,10 @@
             });
         };
 
+        server-keymap = pkgs.writeShellScriptBin "serve-keymap" ''
+          ${pkgs.nodePackages.serve}/bin/serve -d keymap-drawer
+        '';
+
         gen-keymap-img = pkgs.writeShellScriptBin "gen-keymap-img" ''
           ${keymap-drawer}/bin/keymap -c keymap-drawer/config.yml parse -z config/corne.keymap > keymap-drawer/corne.yaml
           ${keymap-drawer}/bin/keymap -c keymap-drawer/config.yml draw keymap-drawer/corne.yaml > keymap-drawer/corne.svg
@@ -62,6 +66,11 @@
         watch-keymap-drawer = pkgs.writeShellScriptBin "watch-keymap-drawer" ''
           echo "Watching for changes in keymap-drawer/corne.yaml"
           echo -e "./keymap-drawer/corne.yaml\n./keymap-drawer/config.yml" | ${pkgs.entr}/bin/entr ${gen-keymap-img}/bin/gen-keymap-img
+        '';
+
+        watch-keymap-and-server = pkgs.writeShellScriptBin "watch-keymap-and-server" ''
+          echo "Watching for changes in keymap-drawer/corne.yaml"
+          ${pkgs.nodePackages.concurrently}/bin/concurrently --name "keymap,serve" "${watch-keymap-drawer}/bin/watch-keymap-drawer" "${server-keymap}/bin/serve-keymap"
         '';
       in {
         formatter = pkgs.alejandra;
@@ -74,7 +83,7 @@
             }
             {
               description = "Watch keymap drawer";
-              exec = watch-keymap-drawer;
+              exec = watch-keymap-and-server;
               category = "documentation";
             }
             {
