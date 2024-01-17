@@ -5,6 +5,13 @@
 
 
 // sourced from urob/zmk-node-free
+// if called with 4 args from zmk_combo, then
+//   5 is combo_6, 6 is combo_5 and FUNC is combo_4
+// if called with 5 args from zmk_combo, then
+//   6 is combo_5, FUNC is combo_5, and combo_4 is in the '...'
+// if called with 6 args from zmk_combo, then
+//   FUNC is combo_6, and combo_4 and combo_5 are in the '...'
+// the macro is replaced with FUNC
 #define MACRO_CHOOSER5(_1, _2, _3, _4, _5, _6, FUNC, ...) FUNC
 
 #define ZMK_COMBO_6_ARGS(name, combo_bindings, keypos, combo_layers, combo_timeout, prior_idle) \
@@ -27,6 +34,8 @@
 #define ZMK_COMBO_5_ARGS(name, combo_bindings, keypos, combo_layers, combo_timeout) \
     ZMK_COMBO_6_ARGS(name, combo_bindings, keypos, combo_layers, combo_timeout, COMBO_PRIOR_IDLE)
 
+// var args gets spread here so the macro will be called with
+// 4, 5 or 6 args plus the funcs, so 5 6 or 7 args total
 #define ZMK_COMBO(...) MACRO_CHOOSER5(__VA_ARGS__, ZMK_COMBO_6_ARGS, ZMK_COMBO_5_ARGS, ZMK_COMBO_4_ARGS)(__VA_ARGS__)
 
 /*
